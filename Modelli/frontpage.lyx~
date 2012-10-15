@@ -136,7 +136,7 @@ HRule
 
  
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -144,7 +144,7 @@ status open
 \backslash
 
 \backslash
-[0.5cm]
+[0.4cm]
 \end_layout
 
 \end_inset
@@ -202,7 +202,7 @@ status collapsed
 
 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -210,7 +210,7 @@ status open
 \backslash
 
 \backslash
-[0.5cm]
+[0.4cm]
 \end_layout
 
 \end_inset
