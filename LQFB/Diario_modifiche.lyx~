@@ -141,11 +141,27 @@ hline
 
 		
 \backslash
+emph{Quasi completato il capitolo 1.
+ Manca solo la parte introduttiva.
+ Iniziata redazione capitolo 2.
+ Inserita la premessa} & Giorgio Maggiolo & 2012/10/16 & V0.3 
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
 emph{Sistemazione del file sorgente per fare in modo che includa tutti i
  capitoli come file a parte, cos
 \backslash
 'i come la prima pagina.
- Iniziata la stesura del capitolo 3pag} & Giorgio Maggiolo & 06/12/2011
+ Iniziata la stesura del capitolo 3pag} & Giorgio Maggiolo & 2012/10/15
  & V0.2 
 \backslash
 
@@ -163,7 +179,7 @@ emph{Inizio creazione del documento.
  Creato lo schema base e iniziato a scrivere l'introduzione e il capitolo
  sulle comunicazioni.
  Impostato inoltre lo schema grafico iniziale del documento stesso.} & Giorgio
- Maggiolo & 05/12/2011 & V0.1 
+ Maggiolo & 2012/10/15 & V0.1 
 \backslash
 
 \backslash

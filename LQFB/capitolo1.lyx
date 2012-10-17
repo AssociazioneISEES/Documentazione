@@ -190,7 +190,8 @@ Installazione Web
 \end_layout
 
 \begin_layout Standard
-Saranno presenti delle immagini che accompagneranno la lettura delle istruzioni.
+Ove necessario, saranno presenti delle immagini che accompagneranno la lettura
+ delle istruzioni.
  Qualora sia necessario fare riferimento ad elementi interni all'immagine,
  si userà la notazione 
 \family typewriter
@@ -222,10 +223,6 @@ main@dev.liquidfeedback.org
 \emph default
  (mailing list degli sviluppatori in inglese).
  All'interno dell'email dovranno essere specificati:
-\end_layout
-
-\begin_layout Enumerate
-Contatto email di chi ha riscontrato il problema in modo da poterlo contattare
 \end_layout
 
 \begin_layout Enumerate
