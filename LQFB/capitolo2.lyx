@@ -64,6 +64,79 @@ Istruzioni per l'installazione
 \end_layout
 
 \begin_layout Subsection
+Premessa
+\end_layout
+
+\begin_layout Standard
+Il seguente manuale viene scritto dopo aver effettuato correttamente un'installa
+zione completa della piattaforma.
+ Per questo motivo la guida sarà indirizzata, ove non specificatamente scritto,
+ all'installazione di 
+\series bold
+LQFB
+\series default
+ in un server con le seguenti caratteristiche:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+S.O.: 
+\series default
+GNU/Linux Debian Squeeze
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Webserver:
+\series default
+ Apache 2.2.16
+\end_layout
+
+\begin_layout Standard
+Per evitare di 
+\begin_inset Quotes eld
+\end_inset
+
+indirizzate
+\begin_inset Quotes erd
+\end_inset
+
+ completamente la guida verso un server con le caratteristiche sopra scritte,
+ in ogni caso, abbiamo deciso di inserire una descrizione testuale delle
+ operazioni da fare (o dei programmi da installare) che sono specifiche
+ del sistema operativo e/o del webserver scelto.
+\end_layout
+
+\begin_layout Standard
+Per definire quale utente dovrà eseguire un comando, si è scelta la seguente
+ notazione:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+# 
+\series default
+\emph default
+[....] = comando eseguito da root o da utenza con diritti di amministrazione
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+(nome_utente)$ 
+\series default
+\emph default
+[...] = comando eseguito da 
+\emph on
+nome_utente
+\end_layout
+
+\begin_layout Subsection
 Installazione dei pacchetti necessari
 \end_layout
 
@@ -76,6 +149,83 @@ LiquidFeedback
 \end_layout
 
 \begin_layout Itemize
+Lua
+\end_layout
+
+\begin_layout Itemize
+PostgreSql
+\end_layout
+
+\begin_layout Itemize
+Pacchetti per la compilazione di sorgenti C/C++
+\end_layout
+
+\begin_layout Itemize
+Librerie PostgreSql per compilare sorgenti C/C++ (pacchetto 
+\begin_inset Quotes eld
+\end_inset
+
+dev
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Librerie Lua per compilare sorgenti C/C++ (pacchetto 
+\begin_inset Quotes eld
+\end_inset
+
+dev
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Compilatore Haskell
+\end_layout
+
+\begin_layout Itemize
+Librerie per il compilatore Haskell (pacchetto 
+\begin_inset Quotes eld
+\end_inset
+
+dev
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+ImageMagick
+\end_layout
+
+\begin_layout Itemize
+MTA a scelta
+\end_layout
+
+\begin_layout Standard
+Per Debian, eseguire il seguente comando:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+# apt-get install lua5.1 postgresql build-essential libpq-dev liblua5.1-0-dev
+ lighttpd ghc libghc6-parsec3-dev imagemagick exim4
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

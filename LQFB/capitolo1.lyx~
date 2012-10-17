@@ -105,10 +105,80 @@ Prerequisiti
 L'installatore dovrà avere accesso completo al server su cui dovrà installare
  l'applicazione
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-Inteso come utenza SSH
+Inteso come utenza SSH con poteri di installazione di root o comunque la
+ possibilità di far installare ed eseguire compilazioni
+\end_layout
+
+\end_inset
+
+.
+ Dovrà inoltre avere conoscenze di:
+\end_layout
+
+\begin_layout Itemize
+PostgreSQL (9 o superiore)
+\end_layout
+
+\begin_layout Itemize
+GNU/Linux Debian
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Versione 
+\begin_inset Formula $\geq$
+\end_inset
+
+6.0.5
+\end_layout
+
+\end_inset
+
+ o GNU/Linux Ubuntu
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Versione Server 
+\begin_inset Formula $\geq$
+\end_inset
+
+12.04
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Apache 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Versione 
+\begin_inset Formula $\geq$
+\end_inset
+
+2
+\end_layout
+
+\end_inset
+
+ o Lighttpd 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Versione 
+\begin_inset Formula $\geq$
+\end_inset
+
+1.4
 \end_layout
 
 \end_inset
@@ -126,15 +196,11 @@ Il manuale è strutturato a seconda delle funzionalità offerte all'Amministrato
 \end_layout
 
 \begin_layout Enumerate
-Installazione Database Azienda
+Installazione Database
 \end_layout
 
 \begin_layout Enumerate
-Installazione Database Domande
-\end_layout
-
-\begin_layout Enumerate
-Installazione e avviamento Back-End
+Installazione Web
 \end_layout
 
 \begin_layout Standard
@@ -166,16 +232,9 @@ Qualora si riscontrino problemi che non sono segnalati in questo manuale
  o qualora si riscontrino malfunzionamenti del sistema, è possibile segnalare
  il problema o il malfunzionamento spedendo una mail a 
 \emph on
-teamcommitted@gmail.com
+main@dev.liquidfeedback.org
 \emph default
-.
- L'oggetto dell'email dovrà essere 
-\series bold
-\emph on
-[SafetyGame - Problema installazione]
-\series default
-\emph default
-.
+ (mailing list degli sviluppatori in inglese).
  All'interno dell'email dovranno essere specificati:
 \end_layout
 
@@ -184,17 +243,13 @@ Contatto email di chi ha riscontrato il problema in modo da poterlo contattare
 \end_layout
 
 \begin_layout Enumerate
-La data e l'ora in cui si è manifestato il problema
-\end_layout
-
-\begin_layout Enumerate
 Ambiente in cui il problema si è manifestato 
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Sistema Operativo, Browser utilizzato, se è installata l'applicazione Desktop
- e, in caso affermativo, se si stava utilizzando
+Sistema Operativo, Browser utilizzato, Descrizione del server (inteso come
+ Sistema Operativo, Webserver, etc...)
 \end_layout
 
 \end_inset

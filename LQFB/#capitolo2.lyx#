@@ -121,19 +121,7 @@ Per definire quale utente dovrà eseguire un comando, si è scelta la seguente
 # 
 \series default
 \emph default
-[....] = comando eseguito da root o da utenza con diritti di amministrazione
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-\emph on
-(nome_utente)$ 
-\series default
-\emph default
-[...] = comando eseguito da 
-\emph on
-nome_utente
+[....] = comando eseguito da root o da 
 \end_layout
 
 \begin_layout Subsection
@@ -219,7 +207,7 @@ status open
 
 \begin_layout Plain Layout
 
-# apt-get install lua5.1 postgresql build-essential libpq-dev liblua5.1-0-dev
+apt-get install lua5.1 postgresql build-essential libpq-dev liblua5.1-0-dev
  lighttpd ghc libghc6-parsec3-dev imagemagick exim4
 \end_layout
 
