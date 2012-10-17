@@ -65,7 +65,73 @@ Introduzione
 \end_layout
 
 \begin_layout Subsection
-Descrizione generale
+Descrizione generale 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+LiquidFeedback
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+D'ora in poi 
+\begin_inset Quotes eld
+\end_inset
+
+LQFB
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ è un software libero per la formazione di opinioni politiche e il processo
+ decisionale, sfumando i confini tra democrazia rappresentativa e diretta.
+ La sua caratteristica più importante è l'implementazione di un sistema
+ di voto delegato ("democrazia liquida"), che prende in considerazione la
+ disparità di conoscenza dei suoi partecipanti.
+\end_layout
+
+\begin_layout Standard
+LQFB è destinato a partiti, associazioni e gruppi di cittadini per valutare
+ le opinioni dei loro membri, senza le limitazioni di un forum internet
+ tradizionale.
+ Ha lo scopo di creare una rappresentazione accurata delle opinioni espresse
+ dai membri del gruppo senza che sia alterata da gerarchie sociali e dalle
+ disparità di conoscenze.
+ Ogni individuo è incoraggiato a promuovere le sue iniziative, nei limiti
+ imposti dai regolamenti votati.
+ La funzione di voto di delega crea strutture di potere simili a democrazia
+ rappresentativa, anche se le deleghe possono essere ritirate in qualsiasi
+ momento.
+ Ciò è necessario per produrre risultati che riflettono lo stato d'animo
+ della maggioranza, anche quando non si trova il tempo di partecipare in
+ prima persona, al fine di evitare il 
+\emph on
+dominio degli estroversi
+\emph default
+ , che è il problema che si pone regolarmente con forme di democrazia diretta.
+ 
+\end_layout
+
+\begin_layout Subsection
+Associazione ISEES
+\end_layout
+
+\begin_layout Standard
+“L’Associazione ISEES è un associazione che svolge attività nei settori
+ di cultura, formazione, ambiente, sviluppo e sostegno della ricerca e della
+ tecnica, supporto alle iniziative ecologiche, supporto alle imprese di
+ stampo cooperativistico e mutualistico che adottano politiche atte alla
+ salvaguardia dell’ambiente e alla sua valorizzazione, lavoro giovanile
+ in imprese etiche ed ecologiche, riqualificazione territoriale e riscoperta
+ del suo valore storico, sostegno ai propri soci senza finalità di lucro.”4
 \end_layout
 
 \begin_layout Subsection
@@ -261,14 +327,6 @@ Es.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Associazione ISEES: Chi siamo?
-\end_layout
-
-\begin_layout Subsection
-Perchè LiquidFeedback?
 \end_layout
 
 \end_body
