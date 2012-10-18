@@ -102,6 +102,14 @@ Editor testuale:
  Nano 2.2.6
 \end_layout
 
+\begin_layout Itemize
+
+\series bold
+MTA: 
+\series default
+Ssmtp v2.64
+\end_layout
+
 \begin_layout Standard
 Le versioni degli applicativi da installare, a cui si faranno riferimento,
  sono:
@@ -287,6 +295,32 @@ ImageMagick
 
 \begin_layout Itemize
 MTA a scelta
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+LQFB presuppone che sul server ci sia anche un MTA.
+ Abbiamo scelto 
+\emph on
+Ssmtp
+\emph default
+ perchè volevamo usare i mailserver di Google (servizio usato per gestire
+ le nostre caselle di posta) e non volevamo spedire direttamente mail dal
+ nostro server; nel caso vogliate usare lo stesso server per 
+\begin_inset Quotes eld
+\end_inset
+
+hostare
+\begin_inset Quotes erd
+\end_inset
+
+ LQFB e spedire mail, dovete usare un altro MTA (nel caso in cui non sia
+ già installato)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -309,7 +343,7 @@ status open
 \begin_layout Plain Layout
 
 # apt-get install lua5.1 postgresql build-essential libpq-dev liblua5.1-0-dev
- lighttpd ghc libghc6-parsec3-dev imagemagick exim4
+ lighttpd ghc libghc6-parsec3-dev imagemagick ssmtp
 \end_layout
 
 \end_inset
@@ -323,11 +357,20 @@ status open
 \end_layout
 
 \begin_layout Subsubsection
-Installazione del database
+Installazione del database e LQFB Core
 \end_layout
 
 \begin_layout Standard
-Procediamo ora all'installazione del database su cui poggerà LQFB.
+Procediamo ora all'installazione del database su cui poggerà LQFB e del
+ 
+\begin_inset Quotes eld
+\end_inset
+
+nucleo
+\begin_inset Quotes erd
+\end_inset
+
+ su cui poggia LQFB.
 \end_layout
 
 \begin_layout Standard
@@ -458,7 +501,22 @@ status open
 
 \begin_layout Plain Layout
 
+# cp core.sql lf_update /opt/liquid_feedback_core/
+\end_layout
+
+\begin_layout Plain Layout
+
 # su www-data
+\end_layout
+
+\begin_layout Plain Layout
+
+www-data$ bash
+\end_layout
+
+\begin_layout Plain Layout
+
+www-data$ cd /opt/liquid_feedback_core
 \end_layout
 
 \begin_layout Plain Layout
@@ -488,7 +546,7 @@ www-data$ psql -v ON_ERROR_STOP=1 -f core.sql liquid_feedback
 
 \begin_layout Standard
 Una volta svolte queste operazioni, si avrà un database PostgreSQL correttamente
- installato.
+ installato che il pacchetto LQFB Core posizionato nella cartella corretta.
  A questo punto si può scegliere se si vogliono installare dei dati di esempio,
  oppure solo i dati minimamente necessari all'avvio di LQFB.
 \end_layout
@@ -743,6 +801,10 @@ CC = cc
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 # linker command 
 \end_layout
 
@@ -753,12 +815,20 @@ LD = ld
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 # filename extension for shared libraries
 \end_layout
 
 \begin_layout Plain Layout
 
 SLIB_EXT = so
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -784,6 +854,10 @@ CFLAGS = -O2 -D_GNU_SOURCE -fPIC -Wall -I /usr/include -I /usr/local/include
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 # additional C compiler flags for parts which depend on PostgreSQL 
 \end_layout
 
@@ -795,12 +869,20 @@ CFLAGS_PGSQL = -I /usr/include/postgresql -I /usr/include/postgresql/server
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 # linker flags 
 \end_layout
 
 \begin_layout Plain Layout
 
 LDFLAGS = -shared -L /usr/lib -L /usr/local/lib
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -834,6 +916,7 @@ e di WebMCP
 
 \begin_layout Standard
 \begin_inset Float algorithm
+placement H
 wide false
 sideways false
 status open
@@ -844,6 +927,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset listings
+lstparams "breaklines=true,language=bash"
 inline false
 status open
 
@@ -860,6 +944,61 @@ status open
 \begin_layout Plain Layout
 
 # cp -RL framework/* /opt/webmcp/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vediamo ora l'installazione di 
+\series bold
+RocketWiki LQFB-Version
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# cd /root/temp/rocketwiki-v0.4
+\end_layout
+
+\begin_layout Plain Layout
+
+# make
+\end_layout
+
+\begin_layout Plain Layout
+
+# mkdir /opt/rocketwiki-lqfb
+\end_layout
+
+\begin_layout Plain Layout
+
+# cp rocketwiki-lqfb rocketwiki-lqfb-compat /opt/rocketwiki-lqfb
 \end_layout
 
 \end_inset

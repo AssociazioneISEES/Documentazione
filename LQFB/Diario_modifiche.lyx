@@ -116,7 +116,7 @@ begin{center}
 
 	
 \backslash
-begin{longtable}{ p{6cm} | c | c | r }
+begin{longtable}{ p{6cm} | p{3cm} | c | r }
 \end_layout
 
 \begin_layout Plain Layout
@@ -133,6 +133,20 @@ begin{longtable}{ p{6cm} | c | c | r }
 		
 \backslash
 hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+emph{Inserita la licenza del documento} & Giorgio Maggiolo & 2012/10/17
+ & V0.6 
+\backslash
+
+\backslash
+ 
 \backslash
 hline
 \end_layout

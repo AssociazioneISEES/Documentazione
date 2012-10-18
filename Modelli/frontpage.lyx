@@ -248,6 +248,57 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vfill
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[scale=0.5]{img/cc}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quest' opera è distribuita con licenza Creative Commons Attribuzione - Condividi
+ allo stesso modo 3.0 Italia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
@@ -384,23 +435,6 @@ approvazione}
 textbf{Uso documento} & 
 \backslash
 usodoc 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-textbf{Lista distribuzione} & 
-\backslash
-parbox{
-\backslash
-textwidth}{
-\backslash
-listadistr} 
 \backslash
 
 \backslash
