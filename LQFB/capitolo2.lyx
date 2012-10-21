@@ -918,10 +918,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset listings
 lstparams "breaklines=true,language=bash"
 inline false
@@ -964,16 +960,14 @@ RocketWiki LQFB-Version
 
 \begin_layout Standard
 \begin_inset Float algorithm
+placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset listings
+lstparams "breaklines=true,language=bash"
 inline false
 status open
 
@@ -1022,38 +1016,36 @@ Come per l'installazione del LQFB Core, anche qui si tratta, per il momento,
 
 \begin_layout Standard
 \begin_inset Float algorithm
+placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset listings
+lstparams "breaklines=true,language=bash"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-#cd /root/install 
+# cd /root/install 
 \end_layout
 
 \begin_layout Plain Layout
 
-#wget http://www.public-software-group.org/pub/projects/liquid_feedback/frontend/v
-2.1.2/liquid_feedback_frontend-v2.1.2.tar.gz
+# wget http://www.public-software-group.org/pub/projects/liquid_feedback/frontend/
+v2.1.2/liquid_feedback_frontend-v2.1.2.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
 
-#tar -xvzf liquid_feedback_frontend-v2.1.2.tar.gz
+# tar -xvzf liquid_feedback_frontend-v2.1.2.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
 
-#mv liquid_feedback_frontend-v2.1.2 /opt/liquid_feedback_frontend
+# mv liquid_feedback_frontend-v2.1.2 /opt/liquid_feedback_frontend
 \end_layout
 
 \end_inset
@@ -1072,8 +1064,194 @@ status open
 
 \begin_layout Standard
 Creiamo quindi i messaggi di aiuto in italiano.
- Poichè le traduzioni italiane degli aiuti non esistono nella distribuzione
- di LQFB appena scaricata e poichè l
+ 
+\series bold
+\emph on
+\bar under
+[[DA RECUPERARE I FILE DELLE TRADUZIONI DEI MENU' DI AIUTO IN ITALIANO]]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# cd /opt/liquid_feedback_frontend/locale 
+\end_layout
+
+\begin_layout Plain Layout
+
+# PATH=/opt/rocketwiki-lqfb:$PATH make
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Andiamo a modificare il possessore della cartella 
+\emph on
+/opt/liquid_feedback_frontend/tmp/
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# chown www-data /opt/liquid_feedback_frontend/tmp/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quindi andiamo a compilare i sorgenti per il componente responsabile della
+ visualizzazione delle immagini.
+ Per fare ciò dovremo modificare il file 
+\emph on
+/opt/liquid_feedback_frontend/fastpath/getpic.c
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# cd /opt/liquid_feedback_frontend/fastpath 
+\end_layout
+
+\begin_layout Plain Layout
+
+# nano getpic.c
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Controllate le righe che contengono le variabili 
+\emph on
+GETPIC_CONNINFO
+\emph default
+ e 
+\emph on
+GETPIC_DEFAULT_AVATAR
+\emph default
+.
+ In particolare:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+GETPIC_CONNINFO:
+\series default
+ controllate che il nome del database corrisponda.
+ Nel caso di un'installazione standard, dovreste avere:
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+#define GETPIC_CONNINFO "dbname=liquid_feedback"
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+GETPIC_DEFAULT_AVATAR:
+\series default
+ dovete modificare la stringa che si presenta di default, togliendo la cartella
+ 
+\emph on
+app
+\emph default
+ dal percorso di default.
+ Nel caso di un'installazione standard, dalla stringa:
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+#define GETPIC_DEFAULT_AVATAR "/opt/liquid_feedback_testing/app/static/avatar.jpg
+"
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+dovreste arrivare ad avere:
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+#define GETPIC_DEFAULT_AVATAR "/opt/liquid_feedback_frontend/static/avatar.jpg"
 \end_layout
 
 \end_body
