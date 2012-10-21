@@ -25,6 +25,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -42,8 +43,8 @@
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
-\tocdepth 3
+\secnumdepth 5
+\tocdepth 5
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language english
@@ -105,7 +106,33 @@ Editor testuale:
 \begin_layout Itemize
 
 \series bold
-MTA: 
+MTA
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Mail Transfer Agent, 
+\series default
+\size normal
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://it.wikipedia.org/wiki/Mail_server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+: 
 \series default
 Ssmtp v2.64
 \end_layout
@@ -1121,7 +1148,7 @@ wide false
 sideways false
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset listings
 lstparams "breaklines=true,language=bash"
 inline false
@@ -1252,6 +1279,682 @@ dovreste arrivare ad avere:
 
 \emph on
 #define GETPIC_DEFAULT_AVATAR "/opt/liquid_feedback_frontend/static/avatar.jpg"
+\end_layout
+
+\begin_layout Subsubsection
+Configurazione del mail server
+\end_layout
+
+\begin_layout Standard
+A questo punto si dovrebbe riconfigurare il mail server.
+ Nel nostro caso andremo a configurare 
+\emph on
+ssmtp
+\emph default
+, MTA che permette al server di accedere ad un mail server esterno tramite
+ SMTP
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Abbiamo scelto questo MTA perchè la posta viene gestita da un server esterno
+ a quello di LQFB, quindi, poichè l'applicazione prevede che all'interno
+ del server ci sia anche un mail server, abbiamo cercato una soluzione che
+ permettesse comunque di connettersi via SMTP al nostro server di posta.
+ 
+\series bold
+\emph on
+\bar under
+[[NON SO SE MI SONO SPIEGATO]]
+\end_layout
+
+\end_inset
+
+.
+ A questo proposito dovremo andare a modificare il file 
+\emph on
+/etc/ssmtp/ssmtp.conf
+\emph default
+, file contenente le configurazioni dell'MTA.
+ Il file dovrebbe, una volta modificato, avere una struttura simile:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+mailhub=smtp.yyy.zz:0000
+\end_layout
+
+\begin_layout Plain Layout
+
+hostname=kkkkkkk
+\end_layout
+
+\begin_layout Plain Layout
+
+root=xxx@yyy.zz 
+\end_layout
+
+\begin_layout Plain Layout
+
+AuthUser=xxx@yyy.zz  
+\end_layout
+
+\begin_layout Plain Layout
+
+AuthPass=***********
+\end_layout
+
+\begin_layout Plain Layout
+
+UseSTARTTLS=yes 
+\end_layout
+
+\begin_layout Plain Layout
+
+UseTLS=yes 
+\end_layout
+
+\begin_layout Plain Layout
+
+FromLineOverride=YES 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+dove:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+root:
+\series default
+ indica l'indirizzo mail a cui tutti gli utenti, il cui UID
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+User identifier, 
+\series default
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://it.wikipedia.org/wiki/User_identifier
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ è inferiore a 1000, deve inviare la posta
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+hostname: 
+\series default
+il nome della propria macchina.
+ Nel caso non si sappia, basta eseguire il comando 
+\emph on
+hostname
+\emph default
+ e copiare il risultato all'interno di questa variabile
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+mailhub: 
+\series default
+indica il server a cui Ssmtp dovrà spedire le e-mail.
+ La porta (ex.
+ 
+\emph on
+:0000
+\emph default
+) è opzionale
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+AuthUser: 
+\series default
+lo username con cui Ssmtp tenterà di autenticarsi presso il server smtp
+ (o mailhub)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+AuthPass:
+\series default
+ la passwordcon cui Ssmtp tenterà di autenticarsi presso il server smtp
+ (o mailhub)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+UseSTARTTLS: 
+\series default
+indicherà l'uso o meno del protocollo STARTTLS
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+UseTLS:
+\series default
+ indicherà l'uso o meno del protocollo TLS
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+FromLineOverride: 
+\series default
+indica la possibilità di Ssmtp di non riscrivere il campo 
+\emph on
+From:
+\emph default
+ della mail che sta per spedire.
+ Se settato 
+\emph on
+OFF
+\emph default
+, allora Ssmtp riscriverà quel campo.
+\end_layout
+
+\begin_layout Standard
+Una volta configurato il file 
+\emph on
+ssmtp.conf
+\emph default
+, bisognerà scrivere il file 
+\emph on
+./revaliases
+\emph default
+.
+ Questo file servirà ad abbinare un utente ad un indirizzo email, con la
+ seguente formattazione:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+local_account:outgoing_address:mailhub 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gli unici due account che dovete assolutamente inserire nel file sono 
+\emph on
+root
+\emph default
+ e 
+\emph on
+www-data
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Quest'ultimo indispensabile affinchè LQFB possa inviare le mail di invito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Creare la configurazione del web server
+\end_layout
+
+\begin_layout Standard
+Procediamo ora allo scrivere la configurazione del webserver affinchè si
+ possa raggiungere LQFB dalla rete.
+ Vedremo due configurazioni, quelle per 
+\emph on
+Apache
+\emph default
+ e per 
+\emph on
+Lighttpd
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Quest'ultimo perchè è stato usato dagli sviluppatori; diciamo per completezza
+ storica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Lighttpd
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Attenzione: per questo passo abbiamo copiato e incollato quanto scritto
+ dagli sviluppatori, che potrete trovare al seguente indirizzo: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://dev.liquidfeedback.org/trac/lf/wiki/installation
+\end_layout
+
+\end_inset
+
+.
+ Non ci assumiamo alcuna responsabilità per quanto scritto
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Andate nella cartella di 
+\emph on
+lighttpd
+\emph default
+ e modificate il file 
+\emph on
+60-liquidfeedback.conf
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# cd /etc/lighttpd 
+\end_layout
+
+\begin_layout Plain Layout
+
+# nano conf-available/60-liquidfeedback.conf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quindi inserite quanto segue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+begin{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "breaklines=true,float={*},float={*},language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+server.modules += ("mod_cgi", "mod_rewrite", "mod_redirect", "mod_setenv")
+\end_layout
+
+\begin_layout Plain Layout
+
+# Enable CGI-Execution of *.lua files through lua binary 
+\end_layout
+
+\begin_layout Plain Layout
+
+cgi.assign += ( ".lua" => "/usr/bin/lua5.1" )
+\end_layout
+
+\begin_layout Plain Layout
+
+alias.url += ( "/lf/fastpath/" => "/opt/liquid_feedback_frontend/fastpath/",
+                "/lf/static"    => "/opt/liquid_feedback_frontend/static",
+                "/lf"           => "/opt/webmcp/cgi-bin" )
+\end_layout
+
+\begin_layout Plain Layout
+
+# Configure environment for demo application
+\end_layout
+
+\begin_layout Plain Layout
+
+$HTTP["url"] =~ "^/lf" {
+\end_layout
+
+\begin_layout Plain Layout
+
+	setenv.add-environment += (
+\end_layout
+
+\begin_layout Plain Layout
+
+		"LANG" => "en_US.UTF-8",
+\end_layout
+
+\begin_layout Plain Layout
+
+		"WEBMCP_APP_BASEPATH" => "/opt/liquid_feedback_frontend/",
+\end_layout
+
+\begin_layout Plain Layout
+
+		"WEBMCP_CONFIG_NAME"  => "myconfig") 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+# URL beautification 
+\end_layout
+
+\begin_layout Plain Layout
+
+url.rewrite-once += (   
+\end_layout
+
+\begin_layout Plain Layout
+
+	# do not rewrite static URLs       
+\end_layout
+
+\begin_layout Plain Layout
+
+		"^/lf/fastpath/(.*)$" => "/lf/fastpath/$1",       
+\end_layout
+
+\begin_layout Plain Layout
+
+		"^/lf/static/(.*)$"   => "/lf/static/$1",
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# base URL       
+\end_layout
+
+\begin_layout Plain Layout
+
+		"^/lf/(
+\backslash
+?(.*))?$" => "/lf/webmcp-wrapper.lua?_webmcp_urldepth=0&_webmcp_module=index&_webm
+cp_view=index&$2",
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	# module base URLs       
+\end_layout
+
+\begin_layout Plain Layout
+
+		"^/lf/([^/
+\backslash
+?]+)/(
+\backslash
+?(.*))?$" => "/lf/webmcp-wrapper.lua?_webmcp_urldepth=1&_webmcp_module=$1&_webmcp_
+view=index&$3",   
+\end_layout
+
+\begin_layout Plain Layout
+
+	# actions       
+\end_layout
+
+\begin_layout Plain Layout
+
+		"^/lf/([^/
+\backslash
+?]+)/([^/
+\backslash
+.
+\backslash
+?]+)(
+\backslash
+?(.*))?$" => "/lf/webmcp-wrapper.lua?_webmcp_urldepth=1&_webmcp_module=$1&_webmcp_
+action=$2&$4",
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	# views without numeric id or string ident 
+\end_layout
+
+\begin_layout Plain Layout
+
+		"^/lf/([^/
+\backslash
+?]+)/([^/
+\backslash
+?]+)
+\backslash
+.([^/
+\backslash
+.
+\backslash
+?]+)(
+\backslash
+?(.*))?$" => "/lf/webmcp-wrapper.lua?_webmcp_urldepth=1&_webmcp_module=$1&_webmcp_
+view=$2&_webmcp_suffix=$3&$5",
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	# views with numeric id or string ident
+\end_layout
+
+\begin_layout Plain Layout
+
+		"^/lf/([^/
+\backslash
+?]+)/([^/
+\backslash
+?]+)/([^/
+\backslash
+?]+)
+\backslash
+.([^/
+\backslash
+.
+\backslash
+?]+)(
+\backslash
+?(.*))?$" => "/lf/webmcp-wrapper.lua?_webmcp_urldepth=2&_webmcp_module=$1&_webmcp_
+view=$2&_webmcp_id=$3&_webmcp_suffix=$4&$6",
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$HTTP["url"] =~ "^/lf/fastpath/" {   
+\end_layout
+
+\begin_layout Plain Layout
+
+	cgi.assign = ( "" => "" )   
+\end_layout
+
+\begin_layout Plain Layout
+
+	setenv.add-response-header = ( "Cache-Control" => "private; max-age=86400"
+ ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+end{landscape}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
