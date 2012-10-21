@@ -658,7 +658,7 @@ Innanzitutto scarichiamo i pacchetti di installazione e scompattiamoli:
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1009,6 +1009,72 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Installazione LQFB Frontend e configurazioni varie del Frontend
+\end_layout
+
+\begin_layout Standard
+Come per l'installazione del LQFB Core, anche qui si tratta, per il momento,
+ di installare il frontend all'interno di una cartella che andremo a creare:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#cd /root/install 
+\end_layout
+
+\begin_layout Plain Layout
+
+#wget http://www.public-software-group.org/pub/projects/liquid_feedback/frontend/v
+2.1.2/liquid_feedback_frontend-v2.1.2.tar.gz
+\end_layout
+
+\begin_layout Plain Layout
+
+#tar -xvzf liquid_feedback_frontend-v2.1.2.tar.gz
+\end_layout
+
+\begin_layout Plain Layout
+
+#mv liquid_feedback_frontend-v2.1.2 /opt/liquid_feedback_frontend
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Creiamo quindi i messaggi di aiuto in italiano.
+ Poichè le traduzioni italiane degli aiuti non esistono nel pacchetto del
+ Frontend e poichè l'associazione ISEES ha deciso di mantenere un proprio
+ file di traduzioni, abbiamo deciso di inserire 
 \end_layout
 
 \end_body

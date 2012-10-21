@@ -116,7 +116,7 @@ begin{center}
 
 	
 \backslash
-begin{longtable}{ p{6cm} | c | c | r }
+begin{longtable}{ p{6cm} | p{3cm} | c | r }
 \end_layout
 
 \begin_layout Plain Layout
