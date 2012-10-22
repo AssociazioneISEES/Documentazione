@@ -1091,13 +1091,10 @@ v2.1.2/liquid_feedback_frontend-v2.1.2.tar.gz
 \begin_layout Standard
 Creiamo quindi i messaggi di aiuto in italiano
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Prima di fare ciò, dovrete creare i file di traduzione seguendo lo schema
- all'interno di 
-\emph on
-/opt/liquid_feedback_frontend/locale/help/
+Per poter fare ciò dovrete 
 \end_layout
 
 \end_inset
