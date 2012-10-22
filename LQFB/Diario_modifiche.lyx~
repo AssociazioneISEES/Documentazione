@@ -141,6 +141,34 @@ hline
 
 		
 \backslash
+emph{Correzione capitolo 1.4; quasi terminato capitolo 2.2.8} & Giorgio Maggiolo
+ & 2012/10/22 & V0.12 
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+emph{Inserita la configurazione per Apache e spiegazione delle variabili
+ da modificare} & Giorgio Maggiolo & 2012/10/22 & V0.11 
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
 emph{Risolto problema inserendo un 'qualcosa' che funziona.
  Aggiunto ambiente 'longonecolumn' per risolvere la problematica della V0.9}
  & Giorgio Maggiolo & 2012/10/22 & V0.10 

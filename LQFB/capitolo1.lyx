@@ -75,7 +75,7 @@ LiquidFeedback
 \series default
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 D'ora in poi 
@@ -131,7 +131,7 @@ Associazione ISEES
  stampo cooperativistico e mutualistico che adottano politiche atte alla
  salvaguardia dell’ambiente e alla sua valorizzazione, lavoro giovanile
  in imprese etiche ed ecologiche, riqualificazione territoriale e riscoperta
- del suo valore storico, sostegno ai propri soci senza finalità di lucro.”4
+ del suo valore storico, sostegno ai propri soci senza finalità di lucro.”
 \end_layout
 
 \begin_layout Subsection
@@ -243,8 +243,7 @@ Come leggere il manuale
 \end_layout
 
 \begin_layout Standard
-Il manuale è strutturato a seconda delle funzionalità offerte all'Amministratore
- Installatore:
+Il manuale è strutturato a seconda delle funzionalità offerte all'installatore:
 \end_layout
 
 \begin_layout Enumerate
@@ -269,11 +268,6 @@ num
 \family default
  corrisponde al numero presente nell'immagine.
  
-\end_layout
-
-\begin_layout Standard
-In coda viene aggiunto un glossario che riporta la definizione dei termini
- sottolineati presenti in questo manuale.
 \end_layout
 
 \begin_layout Subsection

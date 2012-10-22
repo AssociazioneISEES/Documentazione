@@ -5,7 +5,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language italian
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -90,7 +90,7 @@ GNU/Linux Debian Squeeze
 \begin_layout Itemize
 
 \series bold
-Webserver:
+Web-server:
 \series default
  Apache 2.2.16
 \end_layout
@@ -115,13 +115,11 @@ status collapsed
 \series bold
 Mail Transfer Agent, 
 \series default
-\size normal
 
 \begin_inset Flex URL
 status collapsed
 
 \begin_layout Plain Layout
-
 http://it.wikipedia.org/wiki/Mail_server
 \end_layout
 
@@ -172,7 +170,6 @@ E sono scaricabili al seguente indirizzo:
 status collapsed
 
 \begin_layout Plain Layout
-
 http://www.public-software-group.org/liquid_feedback
 \end_layout
 
@@ -193,7 +190,7 @@ indirizzare
  completamente la guida verso un server con le caratteristiche sopra scritte,
  in ogni caso, abbiamo deciso di inserire una descrizione testuale delle
  operazioni da fare (o dei programmi da installare) che sono specifiche
- del sistema operativo e/o del webserver scelto.
+ del sistema operativo e/o del web-server scelto.
 \end_layout
 
 \begin_layout Standard
@@ -331,7 +328,7 @@ LQFB presuppone che sul server ci sia anche un MTA.
 \emph on
 Ssmtp
 \emph default
- perchè volevamo usare i mailserver di Google (servizio usato per gestire
+ perché volevamo usare i mailserver di Google (servizio usato per gestire
  le nostre caselle di posta) e non volevamo spedire direttamente mail dal
  nostro server; nel caso vogliate usare lo stesso server per 
 \begin_inset Quotes eld
@@ -368,9 +365,8 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # apt-get install lua5.1 postgresql build-essential libpq-dev liblua5.1-0-dev
- lighttpd ghc libghc6-parsec3-dev imagemagick ssmtp
+ lighttpd ghc libghc6-parsec3-dev imagemagick Ssmtp
 \end_layout
 
 \end_inset
@@ -406,7 +402,7 @@ Innanzitutto procediamo all'assegnazione dei permessi di creazione database
 \emph on
 www-data
 \emph default
-, l'utenza creata dal webserver per poter accedere ai file.
+, l'utenza creata dal web-server per poter accedere ai file.
 \begin_inset Float algorithm
 placement H
 wide false
@@ -420,37 +416,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # su postgres
 \end_layout
 
 \begin_layout Plain Layout
-
 postgres$ createuser
 \end_layout
 
 \begin_layout Plain Layout
-
 Enter name of role to add: www-data 
 \end_layout
 
 \begin_layout Plain Layout
-
 Shall the new role be a superuser? (y/n) n 
 \end_layout
 
 \begin_layout Plain Layout
-
 Shall the new role be allowed to create databases? (y/n) y 
 \end_layout
 
 \begin_layout Plain Layout
-
 Shall the new role be allowed to create more new roles? (y/n) n
 \end_layout
 
 \begin_layout Plain Layout
-
 postgres$ exit
 \end_layout
 
@@ -486,78 +475,63 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # cd /root/
 \end_layout
 
 \begin_layout Plain Layout
-
 # mkdir temp
 \end_layout
 
 \begin_layout Plain Layout
-
 # cd ./temp/
 \end_layout
 
 \begin_layout Plain Layout
-
 # wget http://www.public-software-group.org/pub/projects/liquid_feedback/backend/v
 2.1.0/liquid_feedback_core-v2.1.0.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
-
 # tar -xf liquid_feedback_core-v2.1.0.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
-
 # cd liquid_feedback_core-v2.1.0
 \end_layout
 
 \begin_layout Plain Layout
-
 # make
 \end_layout
 
 \begin_layout Plain Layout
-
 # mkdir /opt/liquid_feedback_core/
 \end_layout
 
 \begin_layout Plain Layout
-
 # cp core.sql lf_update /opt/liquid_feedback_core/
 \end_layout
 
 \begin_layout Plain Layout
-
 # su www-data
 \end_layout
 
 \begin_layout Plain Layout
-
 www-data$ bash
 \end_layout
 
 \begin_layout Plain Layout
-
 www-data$ cd /opt/liquid_feedback_core
 \end_layout
 
 \begin_layout Plain Layout
-
 www-data$ createdb liquid_feedback
 \end_layout
 
 \begin_layout Plain Layout
-
 www-data$ createlang plpgsql liquid_feedback
 \end_layout
 
 \begin_layout Plain Layout
-
 www-data$ psql -v ON_ERROR_STOP=1 -f core.sql liquid_feedback 
 \end_layout
 
@@ -572,7 +546,7 @@ www-data$ psql -v ON_ERROR_STOP=1 -f core.sql liquid_feedback
 \end_layout
 
 \begin_layout Standard
-Una volta svolte queste operazioni, si avrà un database PostgreSQL correttamente
+Una volta svolte queste operazioni, si avrà un database PostgreSql correttamente
  installato che il pacchetto LQFB Core posizionato nella cartella corretta.
  A questo punto si può scegliere se si vogliono installare dei dati di esempio,
  oppure solo i dati minimamente necessari all'avvio di LQFB.
@@ -601,12 +575,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 www-data$ psql -v ON_ERROR_STOP=1 -f demo.sql liquid_feedback 
 \end_layout
 
 \begin_layout Plain Layout
-
 www-data$ exit
 \end_layout
 
@@ -643,12 +615,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 www-data$ psql -v ON_ERROR_STOP=1 -f init.sql liquid_feedback
 \end_layout
 
 \begin_layout Plain Layout
-
 www-data$ exit
 \end_layout
 
@@ -663,7 +633,7 @@ www-data$ exit
 \end_layout
 
 \begin_layout Subsubsection
-Installazione WebMCP & RocketWiki LqFB-Edition
+Installazione WebMCP & RocketWiki LQFB-Edition
 \end_layout
 
 \begin_layout Standard
@@ -698,34 +668,28 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # cd /root/temp/
 \end_layout
 
 \begin_layout Plain Layout
-
 # wget http://www.public-software-group.org/pub/projects/rocketwiki/v0.4/rocketwiki
 -v0.4.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
-
 # wget http://www.public-software-group.org/pub/projects/webmcp/v1.2.5/webmcp-v1.2.5.ta
 r.gz
 \end_layout
 
 \begin_layout Plain Layout
-
 # tar -xf rocketwiki-v0.4.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
-
 # tar -xf webmcp-v1.2.5.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
-
 # cd webmcp-v1.2.5
 \end_layout
 
@@ -813,12 +777,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # C compiler command 
 \end_layout
 
 \begin_layout Plain Layout
-
 CC = cc
 \end_layout
 
@@ -827,12 +789,10 @@ CC = cc
 \end_layout
 
 \begin_layout Plain Layout
-
 # linker command 
 \end_layout
 
 \begin_layout Plain Layout
-
 LD = ld
 \end_layout
 
@@ -841,12 +801,10 @@ LD = ld
 \end_layout
 
 \begin_layout Plain Layout
-
 # filename extension for shared libraries
 \end_layout
 
 \begin_layout Plain Layout
-
 SLIB_EXT = so
 \end_layout
 
@@ -855,22 +813,18 @@ SLIB_EXT = so
 \end_layout
 
 \begin_layout Plain Layout
-
 # C compiler flags 
 \end_layout
 
 \begin_layout Plain Layout
-
 # TODO: check alternatives to -D_GNU_SOURCE -fPIC 
 \end_layout
 
 \begin_layout Plain Layout
-
 #       using libtool?
 \end_layout
 
 \begin_layout Plain Layout
-
 CFLAGS = -O2 -D_GNU_SOURCE -fPIC -Wall -I /usr/include -I /usr/local/include
  -I /usr/include/lua5.1
 \end_layout
@@ -880,12 +834,10 @@ CFLAGS = -O2 -D_GNU_SOURCE -fPIC -Wall -I /usr/include -I /usr/local/include
 \end_layout
 
 \begin_layout Plain Layout
-
-# additional C compiler flags for parts which depend on PostgreSQL 
+# additional C compiler flags for parts which depend on PostgreSql 
 \end_layout
 
 \begin_layout Plain Layout
-
 CFLAGS_PGSQL = -I /usr/include/postgresql -I /usr/include/postgresql/server
  -I /usr/local/include/postgresql -I /usr/local/include/postgresql/server
 \end_layout
@@ -895,12 +847,10 @@ CFLAGS_PGSQL = -I /usr/include/postgresql -I /usr/include/postgresql/server
 \end_layout
 
 \begin_layout Plain Layout
-
 # linker flags 
 \end_layout
 
 \begin_layout Plain Layout
-
 LDFLAGS = -shared -L /usr/lib -L /usr/local/lib
 \end_layout
 
@@ -909,12 +859,10 @@ LDFLAGS = -shared -L /usr/lib -L /usr/local/lib
 \end_layout
 
 \begin_layout Plain Layout
-
-# additional linker flags for parts which depend on PostgreSQL
+# additional linker flags for parts which depend on PostgreSql
 \end_layout
 
 \begin_layout Plain Layout
-
 LDFLAGS_PGSQL = 
 \end_layout
 
@@ -951,17 +899,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # make
 \end_layout
 
 \begin_layout Plain Layout
-
 # mkdir /opt/webmcp
 \end_layout
 
 \begin_layout Plain Layout
-
 # cp -RL framework/* /opt/webmcp/
 \end_layout
 
@@ -999,22 +944,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # cd /root/temp/rocketwiki-v0.4
 \end_layout
 
 \begin_layout Plain Layout
-
 # make
 \end_layout
 
 \begin_layout Plain Layout
-
 # mkdir /opt/rocketwiki-lqfb
 \end_layout
 
 \begin_layout Plain Layout
-
 # cp rocketwiki-lqfb rocketwiki-lqfb-compat /opt/rocketwiki-lqfb
 \end_layout
 
@@ -1038,7 +979,7 @@ Installazione LQFB Frontend e configurazioni varie del Frontend
 
 \begin_layout Standard
 Come per l'installazione del LQFB Core, anche qui si tratta, per il momento,
- di installare il frontend all'interno di una cartella che andremo a creare:
+ di installare il Frontend all'interno di una cartella che andremo a creare:
 \end_layout
 
 \begin_layout Standard
@@ -1055,24 +996,20 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # cd /root/install 
 \end_layout
 
 \begin_layout Plain Layout
-
-# wget http://www.public-software-group.org/pub/projects/liquid_feedback/frontend/
+# wget http://www.public-software-group.org/pub/projects/liquid_feedback/Frontend/
 v2.1.2/liquid_feedback_frontend-v2.1.2.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
-
 # tar -xvzf liquid_feedback_frontend-v2.1.2.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
-
-# mv liquid_feedback_frontend-v2.1.2 /opt/liquid_feedback_frontend
+# mv liquid_feedback_frontend-v2.1.2 /opt/liquid_feedback_Frontend
 \end_layout
 
 \end_inset
@@ -1112,12 +1049,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
-# cd /opt/liquid_feedback_frontend/locale 
+# cd /opt/liquid_feedback_Frontend/locale 
 \end_layout
 
 \begin_layout Plain Layout
-
 # PATH=/opt/rocketwiki-lqfb:$PATH make
 \end_layout
 
@@ -1138,7 +1073,7 @@ status open
 \begin_layout Standard
 Andiamo a modificare il possessore della cartella 
 \emph on
-/opt/liquid_feedback_frontend/tmp/
+/opt/liquid_feedback_Frontend/tmp/
 \end_layout
 
 \begin_layout Standard
@@ -1155,8 +1090,7 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
-# chown www-data /opt/liquid_feedback_frontend/tmp/
+# chown www-data /opt/liquid_feedback_Frontend/tmp/
 \end_layout
 
 \end_inset
@@ -1178,7 +1112,7 @@ Quindi andiamo a compilare i sorgenti per il componente responsabile della
  visualizzazione delle immagini.
  Per fare ciò dovremo modificare il file 
 \emph on
-/opt/liquid_feedback_frontend/fastpath/getpic.c
+/opt/liquid_feedback_Frontend/fastpath/getpic.c
 \emph default
 :
 \end_layout
@@ -1197,12 +1131,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
-# cd /opt/liquid_feedback_frontend/fastpath 
+# cd /opt/liquid_feedback_Frontend/fastpath 
 \end_layout
 
 \begin_layout Plain Layout
-
 # nano getpic.c
 \end_layout
 
@@ -1278,7 +1210,7 @@ dovreste arrivare ad avere:
 
 
 \emph on
-#define GETPIC_DEFAULT_AVATAR "/opt/liquid_feedback_frontend/static/avatar.jpg"
+#define GETPIC_DEFAULT_AVATAR "/opt/liquid_feedback_Frontend/static/avatar.jpg"
 \end_layout
 
 \begin_layout Subsubsection
@@ -1289,7 +1221,7 @@ Configurazione del mail server
 A questo punto si dovrebbe riconfigurare il mail server.
  Nel nostro caso andremo a configurare 
 \emph on
-ssmtp
+Ssmtp
 \emph default
 , MTA che permette al server di accedere ad un mail server esterno tramite
  SMTP
@@ -1297,7 +1229,7 @@ ssmtp
 status collapsed
 
 \begin_layout Plain Layout
-Abbiamo scelto questo MTA perchè la posta viene gestita da un server esterno
+Abbiamo scelto questo MTA perché la posta viene gestita da un server esterno
  a quello di LQFB, quindi, poichè l'applicazione prevede che all'interno
  del server ci sia anche un mail server, abbiamo cercato una soluzione che
  permettesse comunque di connettersi via SMTP al nostro server di posta.
@@ -1313,7 +1245,7 @@ Abbiamo scelto questo MTA perchè la posta viene gestita da un server esterno
 .
  A questo proposito dovremo andare a modificare il file 
 \emph on
-/etc/ssmtp/ssmtp.conf
+/etc/Ssmtp/Ssmtp.conf
 \emph default
 , file contenente le configurazioni dell'MTA.
  Il file dovrebbe, una volta modificato, avere una struttura simile:
@@ -1333,42 +1265,34 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 mailhub=smtp.yyy.zz:0000
 \end_layout
 
 \begin_layout Plain Layout
-
 hostname=kkkkkkk
 \end_layout
 
 \begin_layout Plain Layout
-
 root=xxx@yyy.zz 
 \end_layout
 
 \begin_layout Plain Layout
-
 AuthUser=xxx@yyy.zz  
 \end_layout
 
 \begin_layout Plain Layout
-
 AuthPass=***********
 \end_layout
 
 \begin_layout Plain Layout
-
 UseSTARTTLS=yes 
 \end_layout
 
 \begin_layout Plain Layout
-
 UseTLS=yes 
 \end_layout
 
 \begin_layout Plain Layout
-
 FromLineOverride=YES 
 \end_layout
 
@@ -1409,7 +1333,6 @@ User identifier,
 status collapsed
 
 \begin_layout Plain Layout
-
 http://it.wikipedia.org/wiki/User_identifier
 \end_layout
 
@@ -1464,7 +1387,7 @@ lo username con cui Ssmtp tenterà di autenticarsi presso il server smtp
 \series bold
 AuthPass:
 \series default
- la passwordcon cui Ssmtp tenterà di autenticarsi presso il server smtp
+ la password con cui Ssmtp tenterà di autenticarsi presso il server smtp
  (o mailhub)
 \end_layout
 
@@ -1504,7 +1427,7 @@ OFF
 \begin_layout Standard
 Una volta configurato il file 
 \emph on
-ssmtp.conf
+Ssmtp.conf
 \emph default
 , bisognerà scrivere il file 
 \emph on
@@ -1533,7 +1456,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 local_account:outgoing_address:mailhub 
 \end_layout
 
@@ -1565,7 +1487,7 @@ www-data
 status collapsed
 
 \begin_layout Plain Layout
-Quest'ultimo indispensabile affinchè LQFB possa inviare le mail di invito
+Quest'ultimo indispensabile affinché LQFB possa inviare le mail di invito
 \end_layout
 
 \end_inset
@@ -1578,7 +1500,7 @@ Creare la configurazione del web server
 \end_layout
 
 \begin_layout Standard
-Procediamo ora allo scrivere la configurazione del webserver affinchè si
+Procediamo ora allo scrivere la configurazione del web-server affinché si
  possa raggiungere LQFB dalla rete.
  Vedremo due configurazioni, quelle per 
 \emph on
@@ -1593,7 +1515,7 @@ Lighttpd
 status collapsed
 
 \begin_layout Plain Layout
-Quest'ultimo perchè è stato usato dagli sviluppatori; diciamo per completezza
+Quest'ultimo perché è stato usato dagli sviluppatori; diciamo per completezza
  storica
 \end_layout
 
@@ -1614,7 +1536,6 @@ Attenzione: per questo passo abbiamo copiato e incollato quanto scritto
 status collapsed
 
 \begin_layout Plain Layout
-
 http://dev.liquidfeedback.org/trac/lf/wiki/installation
 \end_layout
 
@@ -1657,12 +1578,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # cd /etc/lighttpd 
 \end_layout
 
 \begin_layout Plain Layout
-
 # nano conf-available/60-liquidfeedback.conf
 \end_layout
 
@@ -1707,84 +1626,68 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 server.modules += ("mod_cgi", "mod_rewrite", "mod_redirect", "mod_setenv")
 \end_layout
 
 \begin_layout Plain Layout
-
 # Enable CGI-Execution of *.lua files through lua binary 
 \end_layout
 
 \begin_layout Plain Layout
-
 cgi.assign += ( ".lua" => "/usr/bin/lua5.1" )
 \end_layout
 
 \begin_layout Plain Layout
-
-alias.url += ( "/lf/fastpath/" => "/opt/liquid_feedback_frontend/fastpath/",
-                "/lf/static"    => "/opt/liquid_feedback_frontend/static",
+alias.url += ( "/lf/fastpath/" => "/opt/liquid_feedback_Frontend/fastpath/",
+                "/lf/static"    => "/opt/liquid_feedback_Frontend/static",
                 "/lf"           => "/opt/webmcp/cgi-bin" )
 \end_layout
 
 \begin_layout Plain Layout
-
 # Configure environment for demo application
 \end_layout
 
 \begin_layout Plain Layout
-
 $HTTP["url"] =~ "^/lf" {
 \end_layout
 
 \begin_layout Plain Layout
-
 	setenv.add-environment += (
 \end_layout
 
 \begin_layout Plain Layout
-
 		"LANG" => "en_US.UTF-8",
 \end_layout
 
 \begin_layout Plain Layout
-
-		"WEBMCP_APP_BASEPATH" => "/opt/liquid_feedback_frontend/",
+		"WEBMCP_APP_BASEPATH" => "/opt/liquid_feedback_Frontend/",
 \end_layout
 
 \begin_layout Plain Layout
-
 		"WEBMCP_CONFIG_NAME"  => "myconfig") 
 \end_layout
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \begin_layout Plain Layout
-
 # URL beautification 
 \end_layout
 
 \begin_layout Plain Layout
-
 url.rewrite-once += (   
 \end_layout
 
 \begin_layout Plain Layout
-
 	# do not rewrite static URLs       
 \end_layout
 
 \begin_layout Plain Layout
-
 		"^/lf/fastpath/(.*)$" => "/lf/fastpath/$1",       
 \end_layout
 
 \begin_layout Plain Layout
-
 		"^/lf/static/(.*)$"   => "/lf/static/$1",
 \end_layout
 
@@ -1793,12 +1696,10 @@ url.rewrite-once += (
 \end_layout
 
 \begin_layout Plain Layout
-
 	# base URL       
 \end_layout
 
 \begin_layout Plain Layout
-
 		"^/lf/(
 \backslash
 ?(.*))?$" => "/lf/webmcp-wrapper.lua?_webmcp_urldepth=0&_webmcp_module=index&_webm
@@ -1806,17 +1707,14 @@ cp_view=index&$2",
 \end_layout
 
 \begin_layout Plain Layout
-
   
 \end_layout
 
 \begin_layout Plain Layout
-
 	# module base URLs       
 \end_layout
 
 \begin_layout Plain Layout
-
 		"^/lf/([^/
 \backslash
 ?]+)/(
@@ -1826,12 +1724,10 @@ view=index&$3",
 \end_layout
 
 \begin_layout Plain Layout
-
 	# actions       
 \end_layout
 
 \begin_layout Plain Layout
-
 		"^/lf/([^/
 \backslash
 ?]+)/([^/
@@ -1845,17 +1741,14 @@ action=$2&$4",
 \end_layout
 
 \begin_layout Plain Layout
-
   
 \end_layout
 
 \begin_layout Plain Layout
-
 	# views without numeric id or string ident 
 \end_layout
 
 \begin_layout Plain Layout
-
 		"^/lf/([^/
 \backslash
 ?]+)/([^/
@@ -1873,17 +1766,14 @@ view=$2&_webmcp_suffix=$3&$5",
 \end_layout
 
 \begin_layout Plain Layout
-
   
 \end_layout
 
 \begin_layout Plain Layout
-
 	# views with numeric id or string ident
 \end_layout
 
 \begin_layout Plain Layout
-
 		"^/lf/([^/
 \backslash
 ?]+)/([^/
@@ -1903,7 +1793,6 @@ view=$2&_webmcp_id=$3&_webmcp_suffix=$4&$6",
 \end_layout
 
 \begin_layout Plain Layout
-
 )
 \end_layout
 
@@ -1912,23 +1801,19 @@ view=$2&_webmcp_id=$3&_webmcp_suffix=$4&$6",
 \end_layout
 
 \begin_layout Plain Layout
-
 $HTTP["url"] =~ "^/lf/fastpath/" {   
 \end_layout
 
 \begin_layout Plain Layout
-
 	cgi.assign = ( "" => "" )   
 \end_layout
 
 \begin_layout Plain Layout
-
 	setenv.add-response-header = ( "Cache-Control" => "private; max-age=86400"
  ) 
 \end_layout
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1969,10 +1854,7 @@ Apache
 \end_layout
 
 \begin_layout Standard
-
-\series medium
 Per Apache potete scegliere se modificare il file 
-\series default
 \emph on
 default
 \emph default
@@ -1999,12 +1881,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # cd /etc/apache2/sites-available/
 \end_layout
 
 \begin_layout Plain Layout
-
 # nano default
 \end_layout
 
@@ -2045,99 +1925,80 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # SITO: liquidfeedback.opensourceecology.it 
 \end_layout
 
 \begin_layout Plain Layout
-
 <VirtualHost *:80> 	
 \end_layout
 
 \begin_layout Plain Layout
-
 	ServerName	lqfb.example.com 
 \end_layout
 
 \begin_layout Plain Layout
-
 	# REGOLE PER LIQUIDFEEDBACK  	 	
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteEngine on
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteRule ^/$ /lf/ [R]
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteRule ^/lf/static/(.*)$ /lf/static/$1 [L,PT] 	
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteRule ^/lf/fastpath/(.*)$ /lf/fastpath/$1 [L,PT]
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteCond %{QUERY_STRING} (.*)?         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteRule ^/lf/$ /lf/webmcp-wrapper.lua?_webmcp_urldepth=0&_webmcp_module=inde
 x&_webmcp_view=index&%1 [PT]
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteCond %{QUERY_STRING} (.*)?         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteRule ^/lf/([^/]+)/$ /lf/webmcp-wrapper.lua?_webmcp_urldepth=1&_webmcp_mod
 ule=$1&_webmcp_view=index&%1 [PT]
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteCond %{QUERY_STRING} (.*)?         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteRule ^/lf/([^/]+)/([^/
 \backslash
 .]+)$ /lf/webmcp-wrapper.lua?_webmcp_urldepth=1&_webmcp_module=$1&_webmcp_action=$
@@ -2145,17 +2006,14 @@ ule=$1&_webmcp_view=index&%1 [PT]
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteCond %{QUERY_STRING} (.*)?         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteRule ^/lf/([^/]+)/([^/
 \backslash
 .]+)
@@ -2165,17 +2023,14 @@ ule=$1&_webmcp_view=index&%1 [PT]
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteCond %{QUERY_STRING} (.*)?         
 \end_layout
 
 \begin_layout Plain Layout
-
 	RewriteRule ^/lf/([^/]+)/([^/]+)/([^/
 \backslash
 .]+)
@@ -2185,133 +2040,107 @@ ule=$1&_webmcp_view=index&%1 [PT]
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \end_layout
 
 \begin_layout Plain Layout
-
-	Alias /lf/fastpath /opt/liquid_feedback_frontend/fastpath         
+	Alias /lf/fastpath /opt/liquid_feedback_Frontend/fastpath         
 \end_layout
 
 \begin_layout Plain Layout
-
-	Alias /lf/static /opt/liquid_feedback_frontend/static
+	Alias /lf/static /opt/liquid_feedback_Frontend/static
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
 	ScriptAlias /lf /opt/webmcp/cgi-bin/ 		
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \end_layout
 
 \begin_layout Plain Layout
-
-	<Directory "/opt/liquid_feedback_frontend/fastpath"> 	  
+	<Directory "/opt/liquid_feedback_Frontend/fastpath"> 	  
 \end_layout
 
 \begin_layout Plain Layout
-
 		AllowOverride None 	  
 \end_layout
 
 \begin_layout Plain Layout
-
 		Options ExecCGI -MultiViews +SymLinksIfOwnerMatch 	  
 \end_layout
 
 \begin_layout Plain Layout
-
 		Order allow,deny 	  
 \end_layout
 
 \begin_layout Plain Layout
-
 		Allow from all 	
 \end_layout
 
 \begin_layout Plain Layout
-
 	</Directory>          	
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \end_layout
 
 \begin_layout Plain Layout
-
 	<Directory "/opt/webmcp/framework/cgi-bin">             
 \end_layout
 
 \begin_layout Plain Layout
-
 		AllowOverride None             
 \end_layout
 
 \begin_layout Plain Layout
-
 		Options ExecCGI -MultiViews +SymLinksIfOwnerMatch             
 \end_layout
 
 \begin_layout Plain Layout
-
 		Order allow,deny             
 \end_layout
 
 \begin_layout Plain Layout
-
 		Allow from all         
 \end_layout
 
 \begin_layout Plain Layout
-
 	</Directory>
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
 	<Location /lf>             
 \end_layout
 
 \begin_layout Plain Layout
-
 		SetEnv WEBMCP_APP_BASEPATH '/opt/liquid_feedback_frontend'           
   
 \end_layout
 
 \begin_layout Plain Layout
-
-		SetEnv WEBMCP_CONFIG_NAME 'reseaulibre' 	    
+		SetEnv WEBMCP_CONFIG_NAME 'myconfig' 	    
 \end_layout
 
 \begin_layout Plain Layout
-
 		SetEnv LANG 'en_US.UTF-8'         
 \end_layout
 
 \begin_layout Plain Layout
-
 	</Location> 
 \end_layout
 
 \begin_layout Plain Layout
-
 </VirtualHost>
 \end_layout
 
@@ -2373,12 +2202,437 @@ SetEnv WEBMCP_CONFIG_NAME:
 status collapsed
 
 \begin_layout Plain Layout
-Di questo parleremo nel capitolo XXX
+Di questo parleremo nel capitolo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Configurazione-di-LQFB"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Configurazione di LQFB Frontend
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Configurazione-di-LQFB"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il metodo più semplice (e più efficace) per configurare LQFB è copiare il
+ file di esempio, modificarlo e salvarlo con un altro nome.
+ 
+\end_layout
+
+\begin_layout Standard
+Vediamo ora le operazioni da fare per poter modificare il file di configurazione
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+# cd /opt/liquid_feedback_Frontend/config/
+\end_layout
+
+\begin_layout Plain Layout
+# cp example.lua myconfig.lua
+\end_layout
+
+\begin_layout Plain Layout
+# nano myconfig.lua
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Poiché il file di configurazione è abbastanza ampio, non includeremo l'intero
+ file.
+ Tuttavia ecco una lista di parametri da modificare
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Dove la descrizione non è sufficientemente esplicativa o comunque c'è 
+\begin_inset Quotes eld
+\end_inset
+
+qualcosa da dire
+\begin_inset Quotes erd
+\end_inset
+
+ troverete una spiegazione, altrimenti troverete solo il nome del parametro
+ e/o della sezione
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Abbiamo preso per assunto che usiate 
+\emph on
+Apache
+\emph default
+ come web-server; per questo motivo le impostazioni scritte sono ottimizzate
+ per questo web-server
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.instance_name
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.app_service_provider
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.absolute_base_url:
+\series default
+ inserite l'indirizzo che avete messo nella 
+\begin_inset Quotes eld
+\end_inset
+
+variabile
+\begin_inset Quotes erd
+\end_inset
+
+ ServerName, comprensiva di /lf/ (ad esempio: 
+\begin_inset Quotes eld
+\end_inset
+
+http://lqfb.example.org/lf/
+\begin_inset Quotes erd
+\end_inset
+
+ [comprensivo di virgolette])
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.database
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.formatting_engine_executeables
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.public_access
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.default_lang:
+\series default
+ se volete che la lingua di default sia l'italiano, inserite 
+\emph on
+
+\begin_inset Quotes eld
+\end_inset
+
+it
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.mail_subject_prefix
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.password_hash_algorithm:
+\series default
+ anche se c'è un valore di default, decommentate in ogni caso una delle
+ tre linee, a seconda dell'algoritmo di criptazione delle password che volete
+ sia usato
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.password_hash_min_rounds: 
+\series default
+decommentate solo se avete scelto un algoritmo sha* per le password
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.password_hash_max_rounds:
+\series default
+ decommentate solo se avete scelto un algoritmo sha* per le password
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+config.download_dir:
+\series default
+ cercate la cartella 
+\emph on
+download
+\emph default
+ all'interno del Frontend ed inserite il suo percorso 
+\end_layout
+
+\begin_layout Standard
+Tutto il resto lasciate così com'è che è già a posto e/o non è necessario.
+\end_layout
+
+\begin_layout Subsubsection
+Configurazioni finali
+\end_layout
+
+\begin_layout Standard
+Arrivati a questo punto, dovremo semplicemente far partire alcuni processi
+ necessari a LQFB e WebMCP, quindi aggiornare Apache e creare l'account
+ amministratore.
+\end_layout
+
+\begin_layout Standard
+Facciamo login come 
+\emph on
+www-data
+\emph default
+ e procediamo a far partire i processi necessari:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+# su www-data
+\end_layout
+
+\begin_layout Plain Layout
+
+www-data@ bash
+\end_layout
+
+\begin_layout Plain Layout
+www-data@ cd /opt/liquid_feedback_core/
+\end_layout
+
+\begin_layout Plain Layout
+www-data@ ./lf_update dbname=liquid_feedback && echo OK
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ovviamente sostituite con il nome del database che avete scelto.
+ Se viene stampato a schermo 
+\begin_inset Quotes eld
+\end_inset
+
+OK
+\begin_inset Quotes erd
+\end_inset
+
+ allora possiamo procedere oltre.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+www-data@ crontab -e
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Andate in fondo al file che vi verrà aperto e aggiungete la seguente riga:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+00 01 * * 1     /opt/lf/liquid_feedback_core/lf_update dbname=liquid_feedback
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In questo modo fare eseguire quello script una volta a settimana (esattamente
+ il Lunedì di ogni settimana alle 01:00)
+\end_layout
+
+\begin_layout Standard
+Quindi proseguiamo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+www-data@ cd /opt/liquid_feedback_frontend/ 
+\end_layout
+
+\begin_layout Plain Layout
+
+www-data@ echo "Event:send_notifications_loop()" | ../webmcp/bin/webmcp_shell
+ myconfig
+\end_layout
+
+\begin_layout Plain Layout
+
+www-data@ psql liquid_feedback
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eseguite la seguente query:
 \end_layout
 
 \begin_layout Standard
