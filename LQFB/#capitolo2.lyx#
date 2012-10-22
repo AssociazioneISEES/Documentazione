@@ -1685,8 +1685,24 @@ Quindi inserite quanto segue:
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{longonecolumn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
-lstparams "breaklines=true,float={*},language=bash"
+lstparams "breaklines=true,language=bash"
 inline false
 status open
 
@@ -1918,6 +1934,454 @@ $HTTP["url"] =~ "^/lf/fastpath/" {
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{longonecolumn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Apache
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series medium
+Per Apache potete scegliere se modificare il file 
+\series default
+\emph on
+default
+\emph default
+ oppure creare un file apposta per LQFB.
+ Per semplicità modificheremo il file 
+\emph on
+/etc/apache2/sites-available/default.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# cd /etc/apache2/sites-available/
+\end_layout
+
+\begin_layout Plain Layout
+
+# nano default
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quindi aggiungete le seguenti righe:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{longonecolumn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# SITO: liquidfeedback.opensourceecology.it 
+\end_layout
+
+\begin_layout Plain Layout
+
+<VirtualHost *:80> 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	ServerName	lqfb.example.com 
+\end_layout
+
+\begin_layout Plain Layout
+
+	# REGOLE PER LIQUIDFEEDBACK  	 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteEngine on
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteRule ^/$ /lf/ [R]
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteRule ^/lf/static/(.*)$ /lf/static/$1 [L,PT] 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteRule ^/lf/fastpath/(.*)$ /lf/fastpath/$1 [L,PT]
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteCond %{QUERY_STRING} (.*)?         
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteRule ^/lf/$ /lf/webmcp-wrapper.lua?_webmcp_urldepth=0&_webmcp_module=inde
+x&_webmcp_view=index&%1 [PT]
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteCond %{QUERY_STRING} (.*)?         
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteRule ^/lf/([^/]+)/$ /lf/webmcp-wrapper.lua?_webmcp_urldepth=1&_webmcp_mod
+ule=$1&_webmcp_view=index&%1 [PT]
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteCond %{QUERY_STRING} (.*)?         
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteRule ^/lf/([^/]+)/([^/
+\backslash
+.]+)$ /lf/webmcp-wrapper.lua?_webmcp_urldepth=1&_webmcp_module=$1&_webmcp_action=$
+2&%1 [PT]
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteCond %{QUERY_STRING} (.*)?         
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteRule ^/lf/([^/]+)/([^/
+\backslash
+.]+)
+\backslash
+.([^/]+)$ /lf/webmcp-wrapper.lua?_webmcp_urldepth=1&_webmcp_module=$1&_webmcp_view
+=$2&_webmcp_suffix=$3&%1 [PT]
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteCond %{QUERY_STRING} (.*)?         
+\end_layout
+
+\begin_layout Plain Layout
+
+	RewriteRule ^/lf/([^/]+)/([^/]+)/([^/
+\backslash
+.]+)
+\backslash
+.([^/]+)$ /lf/webmcp-wrapper.lua?_webmcp_urldepth=2&_webmcp_module=$1&_webmcp_view
+=$2&_webmcp_id=$3&_webmcp_suffix=$4&%1 [PT]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	Alias /lf/fastpath /opt/liquid_feedback_frontend/fastpath         
+\end_layout
+
+\begin_layout Plain Layout
+
+	Alias /lf/static /opt/liquid_feedback_frontend/static
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+	ScriptAlias /lf /opt/webmcp/cgi-bin/ 		
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	<Directory "/opt/liquid_feedback_frontend/fastpath"> 	  
+\end_layout
+
+\begin_layout Plain Layout
+
+		AllowOverride None 	  
+\end_layout
+
+\begin_layout Plain Layout
+
+		Options ExecCGI -MultiViews +SymLinksIfOwnerMatch 	  
+\end_layout
+
+\begin_layout Plain Layout
+
+		Order allow,deny 	  
+\end_layout
+
+\begin_layout Plain Layout
+
+		Allow from all 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	</Directory>          	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	<Directory "/opt/webmcp/framework/cgi-bin">             
+\end_layout
+
+\begin_layout Plain Layout
+
+		AllowOverride None             
+\end_layout
+
+\begin_layout Plain Layout
+
+		Options ExecCGI -MultiViews +SymLinksIfOwnerMatch             
+\end_layout
+
+\begin_layout Plain Layout
+
+		Order allow,deny             
+\end_layout
+
+\begin_layout Plain Layout
+
+		Allow from all         
+\end_layout
+
+\begin_layout Plain Layout
+
+	</Directory>
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+	<Location /lf>             
+\end_layout
+
+\begin_layout Plain Layout
+
+		SetEnv WEBMCP_APP_BASEPATH '/opt/liquid_feedback_frontend'           
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+		SetEnv WEBMCP_CONFIG_NAME 'reseaulibre' 	    
+\end_layout
+
+\begin_layout Plain Layout
+
+		SetEnv LANG 'en_US.UTF-8'         
+\end_layout
+
+\begin_layout Plain Layout
+
+	</Location> 
+\end_layout
+
+\begin_layout Plain Layout
+
+</VirtualHost>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{longonecolumn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A questo schema dovrete modificare le seguenti parti:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+ServerName:
+\series default
+ qui dovete inserire l'indirizzo a cui sarà raggiungibile LQFB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+SetEnv WEBMCP_APP_BASEPATH:
+\series default
+ inserite la locazione della cartella dove risiede il Frontend di LQFB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+SetEnv WEBMCP_CONFIG_NAME:
+\series default
+ qui dovrete inserire il nome del file di configurazione che avete creato
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Di questo parleremo nel capitolo XXX
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
