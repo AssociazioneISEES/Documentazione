@@ -1690,9 +1690,9 @@ status open
 
 \begin_layout Plain Layout
 
-% 
+
 \backslash
-begin{landscape}
+begin{longonecolumn}
 \end_layout
 
 \end_inset
@@ -1702,7 +1702,7 @@ begin{landscape}
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "breaklines=true,float={*},float={*},language=bash"
+lstparams "breaklines=true,language=bash"
 inline false
 status open
 
@@ -1938,18 +1938,14 @@ $HTTP["url"] =~ "^/lf/fastpath/" {
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-% 
+
 \backslash
-end{landscape}
+end{longonecolumn}
 \end_layout
 
 \end_inset

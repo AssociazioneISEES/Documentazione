@@ -9,6 +9,58 @@
 \usepackage{lscape}
 \usepackage{longtable}
 \usepackage[colorlinks=true]{hyperref}
+
+%% DA QUI PER I LISTATI PIU' LUNGHI DI UNA PAGINA
+
+\usepackage{afterpage}
+\usepackage{listings}
+\usepackage{lipsum} % Just for dummy text.
+\makeatletter
+\newbox\loc@box
+\newenvironment{longonecolumn}{%
+        \ifvoid\loc@box\else
+                \errmessage{Too many longonecolumn environments too
+                close together.}%
+        \fi
+        \global\setbox\loc@box\vbox\bgroup
+                \hsize\textwidth
+                \columnwidth\hsize
+                \linewidth\hsize
+                \@twocolumnfalse
+}{%
+        \egroup
+        \afterpage\loc@placebox
+}
+\newcommand*\loc@placebox{%
+        \if@firstcolumn
+                \loc@placebox@
+        \else
+                \afterpage\loc@placebox
+        \fi
+}
+\newcommand*\loc@placebox@{%
+        \onecolumn
+        \begingroup
+                \loop\ifdim\ht\loc@box>\vsize
+                        \setbox\z@\vsplit\loc@box to\vsize
+                        \unvbox\z@
+                        \vfill
+                        \pagebreak
+                \repeat
+                \ifdim\ht\loc@box>\dbltopfraction\vsize
+                        \unvbox\loc@box
+                        \vfill
+                        \twocolumn\relax
+                \else
+                        \twocolumn[\unvbox\loc@box\vspace\dbltextfloatsep]%
+                \fi
+        \endgroup
+        \global\setbox\loc@box\box\voidb@x % Probably not needed
+}
+\makeatother
+
+%% RIPRENDE NORMALMENTE
+
 \hypersetup{
     colorlinks,
     citecolor=black,

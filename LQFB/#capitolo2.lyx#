@@ -1685,24 +1685,8 @@ Quindi inserite quanto segue:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-begin{landscape}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset listings
-lstparams "breaklines=true,float,language=bash"
+lstparams "breaklines=true,float={*},language=bash"
 inline false
 status open
 
@@ -1930,26 +1914,6 @@ $HTTP["url"] =~ "^/lf/fastpath/" {
 \begin_layout Plain Layout
 
 }
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-end{landscape}
 \end_layout
 
 \end_inset
