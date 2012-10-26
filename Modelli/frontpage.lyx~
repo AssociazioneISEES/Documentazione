@@ -326,6 +326,10 @@ status open
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
 begin{center}
@@ -435,23 +439,6 @@ approvazione}
 textbf{Uso documento} & 
 \backslash
 usodoc 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-		# 
-\backslash
-textbf{Lista distribuzione} & 
-\backslash
-parbox{
-\backslash
-textwidth}{
-\backslash
-listadistr} 
 \backslash
 
 \backslash

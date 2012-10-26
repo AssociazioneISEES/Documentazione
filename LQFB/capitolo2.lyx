@@ -2051,11 +2051,6 @@ status open
 
 \begin_layout Plain Layout
 
-# SITO: liquidfeedback.opensourceecology.it 
-\end_layout
-
-\begin_layout Plain Layout
-
 <VirtualHost *:80> 	
 \end_layout
 
@@ -2824,10 +2819,11 @@ Eseguite la seguente query:
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset listings
+lstparams "breaklines=true,language=SQL"
 inline false
 status open
 
@@ -2891,10 +2887,6 @@ placement H
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset listings

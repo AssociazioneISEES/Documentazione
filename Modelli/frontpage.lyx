@@ -328,6 +328,13 @@ status open
 
 
 \backslash
+vspace*{0.2cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 begin{center}
 \end_layout
 

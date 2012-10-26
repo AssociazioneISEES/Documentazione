@@ -6,6 +6,7 @@
 \usepackage{fancyhdr}
 \usepackage{ucs}
 \usepackage{lastpage}
+\usepackage{fullpage}
 \usepackage{lscape}
 \usepackage{longtable}
 \usepackage[colorlinks=true]{hyperref}
@@ -61,6 +62,7 @@
 
 %% RIPRENDE NORMALMENTE
 
+%% IMPOSTAZIONI PER I COLLEGAMENTI IPERTESTUALI E PER I LINK FRA PAGINE
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -68,10 +70,13 @@
     linkcolor=black,
     urlcolor=black
 }
+
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%% INTESTAZIONE DI OGNI PAGINA E NUMERO DI PAGINA
 \fancyhead[RE, RO]{\doctitle \versiondoc - \NomeEnte}
 %%DOVETE COPIARE IL FILE LogoTeam.jpg ALL'INTERNO DELLA CARTELLA IMG (CHE DOVRETE CREARE) DENTRO LA CARTELLA DEL VOSTRO DOCUMENTO
 \lhead{\setlength{\unitlength}{1mm}
@@ -79,6 +84,9 @@
 		\put(5,0){\includegraphics[scale=0.07]{img/isees}}
 	\end{picture}}
 \fancyfoot[CE, CO]{\thepage\ di \pageref{LastPage}}
+\headsep=0.5cm
+
+%% NOMI PARTICOLARI
 
 %%Comandi particolari per i nomi delle figure. Chiamare come una funzione LaTeX
 \newcommand{\NomeEnte}{\emph{Ass. ISEES }}
@@ -89,10 +97,10 @@
 \newcommand{\doctitle}{Manuale installazione LiquidFeedback }
 
 %% INSERIRE QUI LA VERSIONE ATTUALE DEL DOCUMENTO (INSERITE SEMPRE UNO SPAZIO ALLA FINE DELLA VERSIONE)
-\newcommand{\versiondoc}{V0.13 }
+\newcommand{\versiondoc}{V1.0 }
 
 %%INSERITE QUI LA DATA DI COMPILAZIONE FINALE DEL DOCUMENTO
-\newcommand{\datared}{GG/MM/AAAA}
+\newcommand{\datared}{2012/10/27}
 
 %%INSERIRE QUI IL/I REDATTORI
 \newcommand{\redattore}{\begin{itemize}
@@ -101,10 +109,10 @@
 \end{itemize}}
 
 %%INSERIRE IL/I NOME DEI VERIFICATORI CHE HANNO VERIFICATO IL DOCUMENTO
-\newcommand{\verificatori}{xxxxxx}
+\newcommand{\verificatori}{Stefano Tacchi}
 
 %%INSERIRE IL NOME DI CHI HA APPROVATO IL DOCUMENTO
-\newcommand{\approvazione}{xxxxxx}
+\newcommand{\approvazione}{Jacopo Amistani Guarda}
 
 %%INSERIRE LA TIPOLOGIA DI USO DEL DOCUMENTO [Interno/Esterno]
 \newcommand{\usodoc}{Esterno}
