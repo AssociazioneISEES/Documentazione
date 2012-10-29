@@ -153,6 +153,10 @@ Msmtp
 apache2-mpm-itk
 \end_layout
 
+\begin_layout Itemize
+ca-certificates
+\end_layout
+
 \begin_layout Standard
 E si dovrà rimuovere il pacchetto 
 \series bold
@@ -190,7 +194,8 @@ status open
 
 \begin_layout Plain Layout
 
-#apt-get -y purge ssmtp && apt-get -y install msmtp apache2-mpm-itk
+#apt-get -y purge ssmtp && apt-get -y install msmtp apache2-mpm-itk ca-certifica
+tes
 \end_layout
 
 \end_inset
@@ -204,7 +209,7 @@ status open
 \end_layout
 
 \begin_layout Subsubsection
-Creazione utente e configurazione Apache
+Creazione utente e copiatura database
 \end_layout
 
 \begin_layout Standard
@@ -280,7 +285,7 @@ Usiamo il seguente comando:
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -336,6 +341,589 @@ oni di Msmtp, quindi non vogliamo che qualcuno possa usarlo per avere un
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Adesso dovremo procedere nuovamente con i passi per creare un nuovo database,
+ ma questa volta per l'utente creato.
+ Dovremo prima creare un ruolo per l'utente appena creato, quindi, dall'utente
+ 
+\emph on
+www-data
+\emph default
+, dovremo estrapolare un dump del database per andarlo a portare all'interno
+ di un nuovo database creato da 
+\emph on
+lqfb-xxxx
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# su postgres
+\end_layout
+
+\begin_layout Plain Layout
+
+postgres$ createuser
+\end_layout
+
+\begin_layout Plain Layout
+
+Enter name of role to add: lqfb-xxxx 
+\end_layout
+
+\begin_layout Plain Layout
+
+Shall the new role be a superuser? (y/n) n 
+\end_layout
+
+\begin_layout Plain Layout
+
+Shall the new role be allowed to create databases? (y/n) y 
+\end_layout
+
+\begin_layout Plain Layout
+
+Shall the new role be allowed to create more new roles? (y/n) n
+\end_layout
+
+\begin_layout Plain Layout
+
+postgres$ exit
+\end_layout
+
+\begin_layout Plain Layout
+
+# su www-data
+\end_layout
+
+\begin_layout Plain Layout
+
+www-data$ bash
+\end_layout
+
+\begin_layout Plain Layout
+
+www-data$ pg_dump -Ft --file=dump.tar.gz liquid_feedback
+\end_layout
+
+\begin_layout Plain Layout
+
+www-data$ exit
+\end_layout
+
+\begin_layout Plain Layout
+
+www-data$ exit
+\end_layout
+
+\begin_layout Plain Layout
+
+# su lqfb-xxxx
+\end_layout
+
+\begin_layout Plain Layout
+
+lqfb-xxxx$ createdb liquid_feedback_xxxx
+\end_layout
+
+\begin_layout Plain Layout
+
+lqfb-xxxx$ pg_restore -d liquid_feedback_xxxx dump.tar.gz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una volta che il dump verrà caricato all'interno del database scelto, si
+ avrà una copia completa del vecchio database all'interno del nuovo utente.
+\end_layout
+
+\begin_layout Subsubsection
+Configurazione Msmtp
+\end_layout
+
+\begin_layout Standard
+Andremo ora a configurare Msmtp creando all'interno della home di ogni nuovo
+ utente (nel nostro caso 
+\emph on
+lqfb-xxxx
+\emph default
+) un file chiamato 
+\emph on
+.msmtprc
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+lqfb-xxxx$ cd ~
+\end_layout
+
+\begin_layout Plain Layout
+
+lqfb-xxxx$ touch .msmtprc
+\end_layout
+
+\begin_layout Plain Layout
+
+lqfb-xxxx$ nano .msmtprc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il file avrà una configurazione simile a questa:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# A freemail service      
+\end_layout
+
+\begin_layout Plain Layout
+
+account freemail      
+\end_layout
+
+\begin_layout Plain Layout
+
+host smtp.freemail.example      
+\end_layout
+
+\begin_layout Plain Layout
+
+from joe_smith@freemail.example   
+\end_layout
+
+\begin_layout Plain Layout
+
+port 587   
+\end_layout
+
+\begin_layout Plain Layout
+
+auth on      
+\end_layout
+
+\begin_layout Plain Layout
+
+user joe.smith      
+\end_layout
+
+\begin_layout Plain Layout
+
+password secret            
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dove:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Account:
+\series default
+ nome con cui si identifica un account all'interno dell'host
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Nel caso in cui sia l'unico indirizzo email disponibile per un determinato
+ account, allora il nome da scegliere dovrà essere 
+\series bold
+default
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Host:
+\series default
+ l'indirizzo del server SMTP
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+From:
+\series default
+ proprio indirizzo email
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Port:
+\series default
+ la porta di connessione.
+ Se questo parametro dovesse mancare, allora verrà utilizzata la porta 25
+ per le connessioni senza crittografia, altrimenti la 465
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Auth: 
+\series default
+indica se il server richiede autorizzazione o meno
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+User: 
+\series default
+l'username con cui si accede al server
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Password:
+\series default
+ password usata per accedere al server SMTP
+\end_layout
+
+\begin_layout Standard
+Ecco un esempio di configurazione per quanto riguarda il server SMTP di
+ gmail:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+account default  
+\end_layout
+
+\begin_layout Plain Layout
+
+host smtp.gmail.com  
+\end_layout
+
+\begin_layout Plain Layout
+
+port 587  
+\end_layout
+
+\begin_layout Plain Layout
+
+auth on  
+\end_layout
+
+\begin_layout Plain Layout
+
+user joe_smith@gmail.com
+\end_layout
+
+\begin_layout Plain Layout
+
+password !Secret!
+\end_layout
+
+\begin_layout Plain Layout
+
+tls on  
+\end_layout
+
+\begin_layout Plain Layout
+
+tls_trust_file /etc/ssl/certs/ca-certificates.crt  
+\end_layout
+
+\begin_layout Plain Layout
+
+from joe_smith@gmail.com 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prima di testare se l'applicazione funziona, dovremo creare un link simbolico
+ fra 
+\emph on
+/usr/bin/msmtp 
+\emph default
+e la directory 
+\emph on
+/usr/sbin/
+\emph default
+, creando un link chiamato 
+\emph on
+sendmail
+\emph default
+ all'interno di quest'ultima directory: infatti LQFB, quando dovrà spedire
+ delle email, tenterà di chiamare questo file e, nel caso non venisse fatto
+ ciò, l'operazione fallirà.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# ln -s /usr/bin/msmtp /usr/sbin/sendmail 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Configurazione di Apache e configurazioni finali
+\end_layout
+
+\begin_layout Standard
+La parte finale riguarda la configurazione del VirtualHost di Apache.
+ Si dovrà semplicemente aggiungere l'istruzione indicata precedentemente
+ all'interno del VirtualHost di Apache (non importa la posizione).
+ Quindi:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+AssignUserId lqfb-xxxx lqfb-xxxx
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prima di procedere al riavvio, dovrete impostare i permessi della cartella
+ 
+\emph on
+/opt/lf/liquid_feedback_frontend/tmp
+\emph default
+ a 777
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Altrimenti l'applicazione non potrà più scrivere i file temporanei
+\end_layout
+
+\end_inset
+
+ eseguendo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#chmod -R 777 /opt/lf/liquid_feedback/frontend/tmp/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Per finire riavviate il server Apache e avrete finito!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "breaklines=true,language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# /etc/init.d/apache2 restart
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
