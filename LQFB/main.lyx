@@ -150,6 +150,23 @@ filename "capitolo2.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
+filename "capitolo3.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
 filename "capitoloX.lyx"
 
 \end_inset

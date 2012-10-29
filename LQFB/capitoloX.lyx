@@ -190,8 +190,18 @@ ione è offerta nel rispetto dei termini della presente Licenza;
 \series bold
 "Licenza Compatibile con Creative Commons"
 \series default
-, una licenza elencata presso http://creativecommons.org/compatiblelicenses,
- che Creative Commons abbia riconosciuto come essenzialmente equivalente
+, una licenza elencata presso 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://creativecommons.org/compatiblelicenses
+\end_layout
+
+\end_inset
+
+, che Creative Commons abbia riconosciuto come essenzialmente equivalente
  a questa Licenza, poiché tale licenza presenta almeno le seguenti caratteristic
 he: (i) le sue condizioni hanno lo stesso scopo, significato ed effetto
  degli Elementi della Licenza di questa Licenza; e (ii) tale licenza permette

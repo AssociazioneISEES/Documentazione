@@ -270,6 +270,54 @@ num
  
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+!ATTENZIONE!
+\series default
+: prima di procedere all'installazione di LQFB, assicurarsi di aver letto
+ l'intero manuale, in quanto il Capitolo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Modifiche-alla-procedura"
+
+\end_inset
+
+ riporta delle variazioni alla procedura standard che possono essere prese
+ in considerazione 
+\bar under
+PRIMA
+\bar default
+ di effettuare l'installazione
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+E' ovviamente sempre possibile applicare quanto scritto nel Capitolo 2 e
+ poi quanto scritto nel Capitolo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Modifiche-alla-procedura"
+
+\end_inset
+
+, ma questo vorrebbe dire perdere del tempo a effettuare una 
+\begin_inset Quotes eld
+\end_inset
+
+iterazione
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero un procedimento che fa ritornare il sistema ad uno stato precedente
+ all'installazione per poi aggiungere le funzionalità desiderate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Come riportare problemi e malfunzionamenti
 \end_layout
@@ -321,6 +369,62 @@ Es.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Notazioni utilizzate
+\end_layout
+
+\begin_layout Standard
+Per definire quale utente dovrà eseguire un comando, si è scelta la seguente
+ notazione:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+# 
+\series default
+\emph default
+[....] = comando eseguito da root o da utenza con diritti di amministrazione
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+(nome_utente)$ 
+\series default
+\emph default
+[...] = comando eseguito da 
+\emph on
+nome_utente
+\end_layout
+
+\begin_layout Standard
+Tutti i nomi di file, cartelle, database, etc...
+ che sono stati inseriti all'interno della guida sono di esempio
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Ovviamente ognuno è libero di installare l'applicazione dove vuole!
+\end_layout
+
+\end_inset
+
+.
+ Nel caso doveste modificare i percorsi dei file o il nome del database
+ o altro, ricordatevi di 
+\begin_inset Quotes eld
+\end_inset
+
+propagare
+\begin_inset Quotes erd
+\end_inset
+
+ tali modifiche dovunque si renda necessario.
 \end_layout
 
 \end_body
