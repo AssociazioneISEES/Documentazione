@@ -188,7 +188,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
-lstparams "breaklines=true,language=bash"
+lstparams "basicstyle={\ttfamily},breaklines=true,language=bash"
 inline false
 status open
 
@@ -289,7 +289,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
-lstparams "breaklines=true,language=bash"
+lstparams "basicstyle={\ttfamily},breaklines=true,language=bash"
 inline false
 status open
 
@@ -368,7 +368,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
-lstparams "breaklines=true,language=bash"
+lstparams "basicstyle={\ttfamily},breaklines=true,language=bash"
 inline false
 status open
 
@@ -488,7 +488,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
-lstparams "breaklines=true,language=bash"
+lstparams "basicstyle={\ttfamily},breaklines=true,language=bash"
 inline false
 status open
 
@@ -529,12 +529,8 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset listings
-lstparams "breaklines=true"
+lstparams "basicstyle={\ttfamily},breaklines=true"
 inline false
 status open
 
@@ -680,12 +676,8 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset listings
-lstparams "breaklines=true"
+lstparams "basicstyle={\ttfamily},breaklines=true"
 inline false
 status open
 
@@ -776,7 +768,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
-lstparams "breaklines=true,language=bash"
+lstparams "basicstyle={\ttfamily},breaklines=true,language=bash"
 inline false
 status open
 
@@ -866,12 +858,8 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset listings
-lstparams "breaklines=true,language=bash"
+lstparams "basicstyle={\ttfamily},breaklines=true,language=bash"
 inline false
 status open
 
@@ -907,7 +895,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset listings
-lstparams "breaklines=true,language=bash"
+lstparams "basicstyle={\ttfamily},breaklines=true,language=bash"
 inline false
 status open
 
