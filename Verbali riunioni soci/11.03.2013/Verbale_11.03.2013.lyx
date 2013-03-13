@@ -222,66 +222,94 @@ Ordine del giorno
 
 \begin_deeper
 \begin_layout Enumerate
+
+\emph on
 Approvazione bilancio anno 2012
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Elezione nuovo CD, Presidente e Collegio dei Probiviri
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Discussione sulle modifiche da apportare allo statuto
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
+
+\emph on
 Creazione del regolamento interno
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Ripresa del ruolo di Presidente e discussione delle modifiche da apportare
  ad esso
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Discussione sulle modalità di voto integrando anche l'online
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
+
+\emph on
 Ripresa della discussione della creazione di un diario online per tenere
  traccia di tutte le attività svolte da e per l'associazione e del documento
  semplificato delle attività e relativi responsabili
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Stato attuale delle infrastrutture web e discussioni su possibili modifiche
  alle stesse
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Risultato Bando Europeo
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Discussione sulla creazione di corsi formativi
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Sintesi dell'anno di operato
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Discussione sulle decisioni passate e future circa il terreno a Marcon (VE)
  di Piergiorgio Defilippi
 \end_layout
 
 \begin_layout Enumerate
+
+\emph on
 Varie et eventuali
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
+
+\emph on
 Sede dell'associazione
 \end_layout
 
@@ -577,7 +605,159 @@ Elezione nuovo CD, Presidente e Collegio dei Probiviri
 \end_layout
 
 \begin_layout Standard
-Il presidente Jacopo Amistani
+Il presidente Jacopo Amistani elenca le responsabilità del Presidente dell'Assoc
+iazione ISEES, che si riassumono in:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rappresentanza dell'associazione
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Firma sociale
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Responsabilità legale
+\end_layout
+
+\begin_layout Standard
+Per le elezioni del Presidente dell'Associazione si candidano i seguenti
+ soci:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Jacopo Amistani
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Enrico Giacomelli
+\end_layout
+
+\begin_layout Standard
+Il socio Enrico Giacomelli precisa che si candida non perchè vuole togliere
+ il posto all'attuale Presidente Jacopo Amistani, ma perchè ha a cuore il
+ benessere dell'associazione e vuole contribuire attivamente ad essa.
+\end_layout
+
+\begin_layout Standard
+L'assemblea decide all'unanimità che la modalità di voto per il presidente
+ sarà per alzata di mano (nel caso di mumble per indicazione del nominativo).
+\end_layout
+
+\begin_layout Standard
+La votazione ottiene i seguenti risultati:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Jacopo Amistani: 
+\series default
+3 voti + 1 online
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Enrico Giacomelli:
+\series default
+ 4 voti + 1 online
+\end_layout
+
+\begin_layout Standard
+L'assemblea decide che Enrico Giacomelli sarà il presidente dell'Associazione
+ ISEES per l'anno 2013.
+\end_layout
+
+\begin_layout Standard
+Alle ore 22.52 i soci Michela Menegazzo e Damiano Dalla Lana delegano i propri
+ voti per l'elezione dei membri del Consiglio Direttivo al socio Andrea
+ Bolgan
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Appendice 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{deleghe}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, quindi lasciano l'assemblea.
+\end_layout
+
+\begin_layout Standard
+Per le elezioni nel Consiglio Direttivo si candidano i seguenti soci:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Jacopo Amistani
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Giorgio Maggiolo
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Andrea Bolgan
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Stefano Tacchi
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Michela Menegazzo
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Damiano Dalla Lana
+\end_layout
+
+\begin_layout Standard
+Dopo aver raccolto tutti i voti, l'assemblea approva tutti i soci candidati
+ al Consiglio Direttivo.
+\end_layout
+
+\begin_layout Standard
+Alle ore 23.06 il socio Enrico Giacomelli lascia l'assemblea.
+ Vista l'ora e il numero esiguo di soci rimasti, l'assemblea si aggiorna
+ alla prossima riunione.
 \end_layout
 
 \begin_layout Standard
@@ -630,7 +810,7 @@ section{Chat di mumble}
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "breaklines=true,numbers=left"
+lstparams "breaklines=true,showstringspaces=false"
 inline false
 status open
 
@@ -1820,6 +2000,8 @@ status open
 
 \backslash
 section{Deleghe}
+\backslash
+label{deleghe}
 \end_layout
 
 \end_inset
