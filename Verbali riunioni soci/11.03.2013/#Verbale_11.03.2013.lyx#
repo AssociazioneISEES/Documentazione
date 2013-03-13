@@ -184,6 +184,10 @@ Enrico Giacomelli
 Davide Fazzolari
 \end_layout
 
+\begin_layout Itemize
+Roberto Ravagnan
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 
@@ -205,7 +209,7 @@ Giuseppe Pane
 \end_layout
 
 \begin_layout Itemize
-Babolin
+Enrico Babolin
 \end_layout
 
 \end_deeper
@@ -323,7 +327,7 @@ Dimissioni del presidente:
  proprie dimissioni durante l'assemblea (accuse inserite nella lettera del
  Socio Martina Amedeo
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Appendice 
@@ -364,7 +368,216 @@ Jacopo Amistani, Damiano Dalla Lana, Alvise Giacon
 Open Source, 
 \emph default
 canoni ispiratrici della stessa ISEES.
- Isees viene interessata da Bottega21 come ispiratrice dei 
+ Isees viene interessata da Bottega21 come ispiratrice dei principi che
+ reggono questo gruppo di soci: infatti Bottega21, come azienda, non esiste
+ ancora.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Spiegazione di come sarà il lavoro in Bottega21 e quali saranno i criteri
+ di ingresso:
+\series default
+ Bottega21 considererà ISEES come canale preferenziale di ricerca di collaborato
+ri.
+ Coloro che aiuteranno con il proprio lavoro o daranno contributi di qualsiasi
+ tipo e che avranno le competenze richieste potranno essere candidati per
+ un ingresso in Bottega21.
+\end_layout
+
+\begin_layout Standard
+Il socio Enrico Giacomelli prende la parola e porta all'attenzione che per
+ via dei mezzi tecnologici usati (Pagina di Facebook
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.facebook.com/groups/124775737647544/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) le comunicazioni risultano essere poco trasparenti, visto che se una persona
+ non segue la pagina per qualche tempo può perdere informazioni preziose
+ sull'andamento dell'associazione.
+ Porta l'esempio della centralina oleodinamica, questione di cui lui si
+ stava occupando e che, ad un certo punto, ha ricevuto disposizioni dal
+ Presidente di non seguire più, senza apparente motivo.
+ Per questo motivo viene posta all'associazione la questione della 
+\begin_inset Quotes eld
+\end_inset
+
+gestione piramidale
+\begin_inset Quotes erd
+\end_inset
+
+ dell'associazione, argomento discusso in un documento condiviso nella pagina
+ Facebook
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Appendice 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{letterasoci}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Il socio Roberto Ravagnan porta all'attenzione del socio Giacomelli che
+ la motivazione della disposizione data era stata data il 27 Novembre 2012
+ con un post proprio nel gruppo, che legge integralmente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+leggete e gaudite ;) oggi tra l'altro ho recuperato una centralina oleodinamica
+ funzionante con tubi valvole e motore a 200 euro, dobbiamo solo montare
+ la centralina e collegare i tubi.
+ Michele BigBabol varda che brao che so stà!!
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alle ore 22.15 il socio Stefano Di Biase lascia l'assemblea.
+\end_layout
+
+\begin_layout Subsection
+Approvazione Bilancio 2012
+\end_layout
+
+\begin_layout Standard
+Si passa alla trattazione del primo punto dell'ODG: 
+\series bold
+Approvazione del bilancio 2012
+\end_layout
+
+\begin_layout Standard
+Il presidente Jacopo Amistani elenca le attività che hanno fatto uso di
+ soldi dell'associazione:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Materiale pubblicitario
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Riparazione del pc dell'associazione
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Acquisto materiali e pagamento mano d'opera CEB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Acquisto centralina oleodinamica
+\end_layout
+
+\begin_layout Standard
+Il presidente spiega che il documento del bilancio 2012 non è stato aggiornato
+ da Aprile 2012 perchè c'erano alcuni dubbi su come inserire alcune voci
+ di spesa (es.
+ i costi del conto corrente) che non sono stati ancora fugati.
+\end_layout
+
+\begin_layout Standard
+Il socio Massimiliano Bertocco interviene chiedendo le motivazioni della
+ mancata comunicazione di quanto esposto.
+ Il presidente afferma che queste questioni erano di competenza del consiglio
+ direttivo.
+\end_layout
+
+\begin_layout Standard
+Alle ore 22.17 i soci Enrico Babolin e Antonella Witzmann lasciano il canale
+ mumble, lasciando di conseguenza l'assemblea.
+ Entra nel canale Mumble il socio Giuseppe Pane.
+\end_layout
+
+\begin_layout Standard
+La socia Michela Menegazzo, riprendendo la discussione fatta prima, chiede
+ la possibilità di aggregazione dei soci all'interno dell'associazione per
+ lo sviluppo di progetti che seguano i principi ispiratrici di ISEES e,
+ nel caso, di poter portare i progetti all'interno di ISEES stessa come
+ si sta facendo per Bottega21.
+ Il presidente afferma che questa possibilità non solo esiste, ma è anche
+ auspicata.
+\end_layout
+
+\begin_layout Subsection
+Elezioni Consiglio Direttivo, Presidente, Collegio dei Probiviri
+\end_layout
+
+\begin_layout Standard
+Si passa alla trattazione del secondo punto dell'ODG: 
+\series bold
+Elezione nuovo CD, Presidente e Collegio dei Probiviri
+\end_layout
+
+\begin_layout Standard
+Il presidente Jacopo Amistani
 \end_layout
 
 \begin_layout Standard
@@ -1629,7 +1842,7 @@ status open
 
 
 \backslash
-section{Lettera Socio Martina Amedeo}
+section{Lettera Socio Amedeo}
 \backslash
 label{letteramartina}
 \end_layout
@@ -1643,6 +1856,42 @@ label{letteramartina}
 \begin_inset External
 	template PDFPages
 	filename lettera.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+section{Lettera Soci Babolin, Bertocco, Bolgan, Fazzolari, Tacchi}
+\backslash
+label{letterasoci}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename mail.pdf
+	extra LaTeX "pages=-"
 
 \end_inset
 
