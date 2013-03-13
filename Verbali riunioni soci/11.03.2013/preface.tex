@@ -9,6 +9,7 @@
 \usepackage{fullpage}
 \usepackage{lscape}
 \usepackage{longtable}
+\usepackage{tabularx}
 \usepackage[colorlinks=true]{hyperref}
 
 %% DA QUI PER I LISTATI PIU' LUNGHI DI UNA PAGINA
@@ -77,7 +78,7 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 %% INTESTAZIONE DI OGNI PAGINA E NUMERO DI PAGINA
-\fancyhead[RE, RO]{\doctitle \versiondoc - \NomeEnte}
+\fancyhead[RE, RO]{\doctitle - \NomeEnte}
 %%DOVETE COPIARE IL FILE LogoTeam.jpg ALL'INTERNO DELLA CARTELLA IMG (CHE DOVRETE CREARE) DENTRO LA CARTELLA DEL VOSTRO DOCUMENTO
 \lhead{\setlength{\unitlength}{1mm}
 	\begin{picture}(0,0)
@@ -94,16 +95,16 @@
 %%DA QUI IN POI POTETE MODIFICARE
 
 %% INSERIRE QUI IL NOME DEL DOCUMENTO (INSERITE SEMPRE UNO SPAZIO ALLA FINE DEL NOME)
-\newcommand{\doctitle}{SEI SICURO DI AVER MODIFICATO IL FILE PREFACE?!?!?!?!?}
+\newcommand{\doctitle}{Verbale riunione 2013/03/11}
 
 %% INSERIRE QUI LA VERSIONE ATTUALE DEL DOCUMENTO (INSERITE SEMPRE UNO SPAZIO ALLA FINE DELLA VERSIONE)
-\newcommand{\versiondoc}{VX.Y }
+\newcommand{\versiondoc}{V0.1 }
 
 %%INSERITE QUI LA DATA DI COMPILAZIONE FINALE DEL DOCUMENTO
-\newcommand{\datared}{____/__/__}
+\newcommand{\datared}{123456}
 
 %%INSERIRE QUI IL/I REDATTORI
-\newcommand{\redattore}{PIPPO}
+\newcommand{\redattore}{Giorgio Maggiolo}
 
 %%INSERIRE IL/I NOME DEI VERIFICATORI CHE HANNO VERIFICATO IL DOCUMENTO
 \newcommand{\verificatori}{PLUTO}
@@ -119,4 +120,10 @@
 
 %%INSERIRE IL SOMMARIO DEL DOCUMENTO
 \newcommand{\testosommario}{ASDASDASD}
+
+%% INSERIRE IL NOME DEL PRESIDENTE DELL'ASSEMBLEA
+\newcommand{\presidenteass}{Damiano Dalla Lana}
+
+%% INSERIRE IL NOME DEL SEGRETARIO DELL'ASSEMBLEA
+\newcommand{\segretarioass}{Giorgio Maggiolo}
 

@@ -176,19 +176,6 @@ doctitle
 
 \end_inset
 
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-versiondoc
-\end_layout
-
-\end_inset
-
 
 \begin_inset ERT
 status collapsed
@@ -257,28 +244,9 @@ status open
 vfill
 \end_layout
 
-\begin_layout Plain Layout
-
-
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-includegraphics[scale=0.5]{img/cc}
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Quest' opera è distribuita con licenza Creative Commons Attribuzione - Condividi
- allo stesso modo 3.0 Italia.
 \end_layout
 
 \begin_layout Standard
@@ -287,13 +255,61 @@ status open
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
-end{center}
+begin{tabularx}{
+\backslash
+textwidth}{XX}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+presidenteass & 
+\backslash
+segretarioass 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Presidente dell'assemblea & Segretario dell'Assemblea 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Firma & Firma 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabularx}
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
@@ -326,6 +342,9 @@ status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+vspace*{0.2cm}
 \end_layout
 
 \begin_layout Plain Layout
@@ -337,7 +356,7 @@ begin{center}
 
 \begin_layout Plain Layout
 
-	
+
 \backslash
 textbf{
 \backslash
@@ -350,14 +369,14 @@ Large Informazioni sul documento}
 
 \begin_layout Plain Layout
 
-	
+
 \backslash
 begin{longtable}{ l | p{5cm} }
 \end_layout
 
 \begin_layout Plain Layout
 
-		
+	
 \backslash
 textbf{Nome documento} & 
 \backslash
@@ -370,7 +389,7 @@ doctitle
 
 \begin_layout Plain Layout
 
-		
+	
 \backslash
 textbf{Data documento} & 
 \backslash
@@ -383,71 +402,7 @@ datared
 
 \begin_layout Plain Layout
 
-		
-\backslash
-textbf{Redattori} & 
-\backslash
-parbox{
-\backslash
-textwidth}{
-\backslash
-redattore} 
-\backslash
 
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-textbf{Verificatori} & 
-\backslash
-parbox{
-\backslash
-textwidth}{
-\backslash
-verificatori} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-textbf{Approvazione} & 
-\backslash
-parbox{
-\backslash
-textwidth}{
-\backslash
-approvazione} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-textbf{Uso documento} & 
-\backslash
-usodoc 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	
 \backslash
 end{longtable}
 \end_layout
