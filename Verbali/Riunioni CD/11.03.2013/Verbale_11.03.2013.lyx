@@ -68,7 +68,7 @@
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "../../../Modelli/frontpage_verbali.lyx"
+filename "C:/Users/Giorgio/Repo Git/Documentazione/Modelli/frontpage_verbali.lyx"
 
 \end_inset
 
@@ -2017,16 +2017,6 @@ section{Deleghe}
 \backslash
 label{deleghe}
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset External
-	template PDFPages
-	filename deleghe.pdf
 
 \end_inset
 

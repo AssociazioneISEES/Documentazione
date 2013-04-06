@@ -1,0 +1,129 @@
+%%!!ATTENZIONE!!
+%QUESTO FILE E' UN ESEMPIO. COPIATE ALL'INTERNO DELLA CARTELLA DEL DOCUMENTO SU CUI STATE LAVORANDO E MODIFICATE
+%% NON MODIFICARE QUESTE IMPOSTAZIONI
+\date{}
+\usepackage[latin9]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{ucs}
+\usepackage{lastpage}
+\usepackage{fullpage}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage[colorlinks=true]{hyperref}
+
+%% DA QUI PER I LISTATI PIU' LUNGHI DI UNA PAGINA
+
+\usepackage{afterpage}
+\usepackage{listings}
+\makeatletter
+\newbox\loc@box
+\newenvironment{longonecolumn}{%
+        \ifvoid\loc@box\else
+                \errmessage{Too many longonecolumn environments too
+                close together.}%
+        \fi
+        \global\setbox\loc@box\vbox\bgroup
+                \hsize\textwidth
+                \columnwidth\hsize
+                \linewidth\hsize
+                \@twocolumnfalse
+}{%
+        \egroup
+        \afterpage\loc@placebox
+}
+\newcommand*\loc@placebox{%
+        \if@firstcolumn
+                \loc@placebox@
+        \else
+                \afterpage\loc@placebox
+        \fi
+}
+\newcommand*\loc@placebox@{%
+        \onecolumn
+        \begingroup
+                \loop\ifdim\ht\loc@box>\vsize
+                        \setbox\z@\vsplit\loc@box to\vsize
+                        \unvbox\z@
+                        \vfill
+                        \pagebreak
+                \repeat
+                \ifdim\ht\loc@box>\dbltopfraction\vsize
+                        \unvbox\loc@box
+                        \vfill
+                        \twocolumn\relax
+                \else
+                       \twocolumn[\unvbox\loc@box\vspace\dbltextfloatsep]%
+                \fi
+        \endgroup
+        \global\setbox\loc@box\box\voidb@x % Probably not needed
+        \onecolumn
+}
+\makeatother
+
+%% RIPRENDE NORMALMENTE
+
+%% IMPOSTAZIONI PER I COLLEGAMENTI IPERTESTUALI E PER I LINK FRA PAGINE
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%% INTESTAZIONE DI OGNI PAGINA E NUMERO DI PAGINA
+\fancyhead[RE, RO]{\doctitle - \NomeEnte}
+%%DOVETE COPIARE IL FILE LogoTeam.jpg ALL'INTERNO DELLA CARTELLA IMG (CHE DOVRETE CREARE) DENTRO LA CARTELLA DEL VOSTRO DOCUMENTO
+\lhead{\setlength{\unitlength}{1mm}
+	\begin{picture}(0,0)
+		\put(5,0){\includegraphics[scale=0.07]{img/isees}}
+	\end{picture}}
+\fancyfoot[CE, CO]{\thepage\ di \pageref{LastPage}}
+\headsep=0.5cm
+
+%% NOMI PARTICOLARI
+
+%%Comandi particolari per i nomi delle figure. Chiamare come una funzione LaTeX
+\newcommand{\NomeEnte}{\emph{Ass. ISEES }}
+
+%%DA QUI IN POI POTETE MODIFICARE
+
+%% INSERIRE QUI IL NOME DEL DOCUMENTO (INSERITE SEMPRE UNO SPAZIO ALLA FINE DEL NOME)
+\newcommand{\doctitle}{Verbale riunione 2013/03/11 }
+
+%% INSERIRE QUI LA VERSIONE ATTUALE DEL DOCUMENTO (INSERITE SEMPRE UNO SPAZIO ALLA FINE DELLA VERSIONE)
+\newcommand{\versiondoc}{V0.1 }
+
+%%INSERITE QUI LA DATA DI COMPILAZIONE FINALE DEL DOCUMENTO
+\newcommand{\datared}{123456}
+
+%%INSERIRE QUI IL/I REDATTORI
+\newcommand{\redattore}{Giorgio Maggiolo}
+
+%%INSERIRE IL/I NOME DEI VERIFICATORI CHE HANNO VERIFICATO IL DOCUMENTO
+\newcommand{\verificatori}{PLUTO}
+
+%%INSERIRE IL NOME DI CHI HA APPROVATO IL DOCUMENTO
+\newcommand{\approvazione}{MINNIE}
+
+%%INSERIRE LA TIPOLOGIA DI USO DEL DOCUMENTO [Interno/Esterno]
+\newcommand{\usodoc}{}
+
+%%INSERIRE LA LISTA DI DISTRIBUZIONE DEL DOCUMENTO
+\newcommand{\listadistr}{ }
+
+%%INSERIRE IL SOMMARIO DEL DOCUMENTO
+\newcommand{\testosommario}{ASDASDASD}
+
+%% INSERIRE IL NOME DEL PRESIDENTE DELL'ASSEMBLEA
+\newcommand{\presidenteass}{Damiano Dalla Lana}
+
+%% INSERIRE IL NOME DEL SEGRETARIO DELL'ASSEMBLEA
+\newcommand{\segretarioass}{Giorgio Maggiolo}
+
