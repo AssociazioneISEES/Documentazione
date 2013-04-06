@@ -68,7 +68,7 @@
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "C:/Users/Giorgio/Repo Git/Documentazione/Modelli/frontpage_verbali.lyx"
+filename "../../../Modelli/frontpage_verbali_cd.lyx"
 
 \end_inset
 
@@ -213,6 +213,12 @@ Definizione di regole per le comunicazioni
 
 \emph on
 Riunione soci
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Varie et eventuali
 \end_layout
 
 \end_deeper
@@ -446,6 +452,180 @@ Dopo attenta valutazione della relazione del Segretario e del Tesoriere
 \begin_layout Standard
 I topic aperti su Google Group dovranno essere segnalati anche nella pagina
  di Facebook.
+\end_layout
+
+\begin_layout Subsection
+Riunione soci
+\end_layout
+
+\begin_layout Standard
+Il Presidente si impegna a indire una riunione soci nel più breve tempo
+ possibile, lasciando due settimane di preavviso, come da consuetudine.
+\end_layout
+
+\begin_layout Subsection
+Varie et eventuale
+\end_layout
+
+\begin_layout Itemize
+Il Presidente chiede al Tesoriere che rediga un documento excel contenente
+ la contabilità dell'associazione, includendo un consuntivo e un preventivo
+ di ricavi e costi dell'associazione presenti e futuri.
+\end_layout
+
+\begin_layout Itemize
+Vengono discussi alcuni punti del documento dei soci Babolin, Bertocco,
+ Bolgan, Fazzolari, Tacchi
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Allegato D, Verbale riunione soci 11/03/2013
+\end_layout
+
+\end_inset
+
+.
+ In particolare
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Punto 3 - Introduzione di un diario online e condiviso coi soci per tenere
+ traccia di tutte le attività svolte da e per l'associazione (con una sintesi
+ completa ed esaustiva dell'anno trascorso)
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Dopo attenta valutazione delle possibili soluzioni è stato deciso che lo
+ storico delle votazioni fatte con LQFB possa essere considerato come 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+storico online
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Per questo motivo non viene implementato alcun nuovo strumento, ma viene
+ disposta la riattivazione di LQFB.
+ Viene incaricato il Segretario, con tempo 3 mesi per la messa in funzione
+ completa.
+ Le tempistiche saranno così ripartite:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+1 mese per l'installazione e la configurazione iniziale
+\end_layout
+
+\begin_layout Itemize
+1 mese e 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ per un beta testing sia dell'applicazione in sè che delle politiche di
+ voto introdotte
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ mese per la finalizzazione dell'applicazione e la messa in produzione
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+Punto 4 - Organizzazione delle strutture digitali in un unico sito per facilitar
+e la comunicazione con i soci e per permetterne l'acquisizione di informazioni
+ riguardanti ISEES e le attività ad esse collegate (comprese le altre sedi
+ regionali)
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Il Segretario riferisce che sarà interpellato il già costituito Gruppo di
+ Lavoro Informatica al fine di verificare quali possono essere le modifiche
+ da apportare per soddisfare la richiesta
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Punto 5 - Votazione di un presidente che sia disposto a svolgere esclusivamente
+ i ruoli previsti dallo statuto
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Sono stati nuovamente ricordati i compiti del Presidente, che si possono
+ riassumere in:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Rappresentanza dell'associazione
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Firma sociale
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Responsabilità legale
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+Punto 6 - Introduzione di un'assemblea permanente in rete e delega del voto
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Anche per raggiungere questo scopo è stato deciso di utilizzare LQFB
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Si rimanda al primo punto di questa lista
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Il Presidente decide che le decisioni prese in ogni riunione del Consiglio
+ Direttivo dovranno essere comunicate ai soci sia redigendo apposito verbale
+ che ribadendole alla prima riunione o Assemblea dei Soci.
+\end_layout
+
+\begin_layout Standard
+Alle ore 22.45 la riunione viene sciolta.
 \end_layout
 
 \end_body
